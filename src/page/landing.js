@@ -12,8 +12,8 @@ import integrated from '../images/icons/integrated.svg'
 import codeWindow from '../images/CodeWindow.png'
 import lowfees from '../images/icons/lowfees.svg'
 import security from '../images/icons/security.svg'
-const PartnersLogo = [gozem, mastercard, moov, mtn, visa]
 
+const PartnersLogo = [gozem, mastercard, moov, mtn, visa]
 
 export default function LandingPage() {
     return (
@@ -26,15 +26,15 @@ export default function LandingPage() {
                     Many entrepries and start-up use our API to build everything from simple payment for few customers, to complex financial products serving several thousands of customes.
                 </P>
                 <div className="mt-20">
-                    <Link to="register"><button className="btn bg-gradient-to-tr from-qosblue to-qosorange text-qosgray inline-block">Start now <i className="fi fi-rr-arrow-small-right inline-block"></i> </button></Link>
-                    <Link to="/documentation">
-                        <button className="btn rounded-full inline-block  bg-gradient-to-tr from-qosblue to-qosorange text-qosgray p-2 ml-4">
+                    <Link to="register" className="block md:inline mb-5"><button className="btn bg-gradient-to-tr from-qosblue to-qosorange text-qosgray inline-block">Create Account <i className="fi fi-rr-arrow-small-right inline-block"></i> </button></Link>
+                    <Link to="/documentation" className="block md:inline mb-5">
+                        <button className="btn rounded-full inline-block  bg-gradient-to-tr from-qosblue to-qosorange text-qosgray p-2 ml-2">
                             <div className="rounded-full flex items-center justify-center border border-qosgray h-6 w-6">
                                 <i className="fi fi-rr-arrow-small-right"></i>
                             </div>
                         </button>
-                        <P className="underline text-qosgray inline-block ml-2">
-                            Documentation
+                        <P className="underline text-qosgray inline-block md:ml-4">
+                            Contact Sales
                         </P>
                     </Link>
                 </div>

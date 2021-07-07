@@ -1,11 +1,13 @@
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import Wrapper from '../components/sectionWrapper'
 export default function RegisterPage() {
-    const [Step,setStep]=useState(0)
+    const [Step, setStep] = useState(0)
     useEffect(() => {
         let stepForm = document.querySelector('#stepForm')
         let formWidth = stepForm.clientWidth
         let CurrentScroll = stepForm.scrollLeft
+        let currentPos = 1
+
         stepForm.querySelectorAll('input').forEach(input => {
             input.addEventListener('focus', function (e) {
                 stepForm.scrollTo({ left: formWidth * (this.parentElement.parentElement.id - 1), behavior: 'smooth' })
@@ -13,12 +15,21 @@ export default function RegisterPage() {
         })
         document.querySelectorAll('.controls').forEach(buttonControl => {
             buttonControl.addEventListener('click', function (e) {
+                currentPos = + (CurrentScroll / formWidth)
+
                 if (CurrentScroll < (formWidth * 2) && this.id === "next") {
+                    document.querySelectorAll('.stepStatus')[currentPos].classList.toggle('active')
+                    document.querySelectorAll('.stepStatus')[currentPos + 1].classList.add('active')
+                    document.querySelectorAll('.stepStatus')[currentPos].classList.add('passed')
                     CurrentScroll += formWidth
                     stepForm.scrollTo({ left: CurrentScroll, behavior: 'smooth' })
                 }
 
                 if (CurrentScroll > 0 && this.id === "prev") {
+                    document.querySelectorAll('.stepStatus')[currentPos].classList.toggle('active')
+                    document.querySelectorAll('.stepStatus')[currentPos - 1].classList.toggle('passed')
+                    document.querySelectorAll('.stepStatus')[currentPos - 1].classList.add('active')
+
                     CurrentScroll -= formWidth
                     stepForm.scrollTo({ left: CurrentScroll, behavior: 'smooth' })
                 }
@@ -44,10 +55,10 @@ export default function RegisterPage() {
         <Wrapper style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "100% 1%" }} >
             <div class="block w-12/12 max-w-lg px-2 pricingCard py-4 mx-auto my-24 rounded-xl">
                 <h3 class="text-center">Create  your <span className="text-qosblue"> QOS </span> account</h3>
-                <div class="my-4 w-3/12 mx-auto flex items-center justify-between">
-                    <button class="h-8 w-8 p-1 transform scale-100 bg-qosorange bg-opacity-80 shadow-xl rounded-full text-qosgray text-msm" >1</button>
-                    <button class="h-8 w-8 p-1 transform scale-75 bg-qosblue rounded-full text-qosgray text-msm" >2</button>
-                    <button class="h-8 w-8 p-1 transform scale-75 bg-qosblue rounded-full text-qosgray text-msm" >3</button>
+                <div class="my-4 w-5/12 md:w-3/12 mx-auto h-8 flex items-center justify-between">
+                    <button id="0" class="stepStatus active" >1</button>
+                    <button id="1" class="stepStatus" >2</button>
+                    <button id="2" class="stepStatus" >3</button>
                 </div>
                 <form id="stepForm" class="overflow-x-hidden hideScroll flex max-w-full">
                     <div class="min-w-full md:px-8 max-w-full" id="1">
@@ -57,7 +68,7 @@ export default function RegisterPage() {
                         </div>
                         <div class="mt-6 mx-auto w-full px-2">
                             <label class="block">Lastname:</label>
-                            <input class=" " name="lastname"  required placeholder="your lastname" />
+                            <input class=" " name="lastname" required placeholder="your lastname" />
                         </div>
                         <div class="mt-6 mx-auto w-full px-2">
                             <label class="block">Country:</label>
@@ -96,18 +107,18 @@ export default function RegisterPage() {
                             <label class="block">passsword comfirmation:</label>
                             <input class="" name="lastname" type="password" required />
                         </div>
-                        <div class="mt-6 mx-auto w-full">
-                            <input type="checkbox" name="privacy" required id="privacy" />
-                            <label class="text-msm font-normal ml-4">Are you agree with the terms of use and data utilisation ?</label>
+                        <div class="mt-6 mx-auto w-full px-2">
+                            <input id="privacy" type="checkbox" name="privacy" required />
+                            <label htmlFor="privacy" class="text-msm font-normal ml-4">Are you agree with the terms of use and data utilisation ?</label>
                         </div>
                     </div>
                 </form>
-                <div class="font-bold text-qosblue w-10/12 md:w-8/12 mx-auto flex justify-around  mt-4">
+                <div class="font-bold text-qosblue md:w-8/12 mx-auto flex justify-around  mt-4">
                     <button hidden id="prev" class="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
                         <span class="fi fi-rr-arrow-left text-msm"></span> back
                     </button>
                     <button id="next" type="submit" class="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
-                        next &nbsp; <span class="fi fi-rr-arrow-right text-msm"></span>
+                        next <span class="fi inline-block align-bottom ml-4 fi-rr-arrow-right text-msm"></span>
                     </button>
                 </div>
             </div>

@@ -1175,10 +1175,7 @@
   h4 {
     @apply text-mST lg:text-dST font-bold text-opacity-70;
   }
-  nav > ul > li:hover,
-  nav > div > ul > li:hover {
-    @apply opacity-50;
-  }
+ 
   #Landing {
     background: linear-gradient(
         209.03deg,
@@ -1197,5 +1194,19 @@
   .hideScroll {
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+  .stepStatus {
+    @apply bg-gradient-to-bl h-2 from-qosblue to-qosorange transition-all duration-200 origin-left                                         text-qosgray transform scale-75 w-8 p-1 text-opacity-0 rounded-full text-msm outline-none cursor-pointer;
+  }
+  .stepStatus.active {
+    @apply bg-gradient-to-bl h-8 from-qosblue to-qosorange text-qosgray  scale-100;
+  }
+  .stepStatus.passed {
+    @apply bg-gradient-to-bl from-qosgreen to-qosgreen text-qosgreen h-2 text-opacity-0;
+  }
+  #products::before{
+    content:'';
+    background:white;
+    @apply block h-6 w-6 transform rotate-45 -translate-y-1/2 p-4 rounded-sm absolute
   }
 }
