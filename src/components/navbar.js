@@ -136,7 +136,7 @@ export default function Navbar() {
                 <span className="fi transform-all duration-500 fi-rr-menu-burger text-qosgray"></span>
             </button>
             <div id="mobileNav" className="pricingCard left-1/2 top-16 transform ml-10 scale-50 translate-x-1/2 opacity-0 min-w-max md:hidden transition-all duration-500 fixed rounded-lg p-4">
-                <div id="products">
+                <div>
                     <p className="text-mmdfont-bold mb-2 text-opacity-50 text-qosdark">Products</p>
                     <nav className="grid grid-flow-col gap-x-4 mb-2">
                         <ul>
