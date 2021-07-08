@@ -3,6 +3,17 @@ import Wrapper from '../components/sectionWrapper'
 export default function RegisterPage() {
     const [Step, setStep] = useState(0)
     useEffect(() => {
+
+        document.querySelectorAll("input").forEach(input => {
+            input.addEventListener("input", function (e) {
+             this.addEventListener('invalid',function(){
+               alert('invalid input')
+             })
+             this.addEventListener('valid',function(e){
+                alert('valid input')
+             })
+            });
+          });
         let stepForm = document.querySelector('#stepForm')
         let formWidth = stepForm.clientWidth
         let CurrentScroll = stepForm.scrollLeft

@@ -1136,27 +1136,40 @@
   select {
     @apply h-12 w-full mt-2 rounded-md border border-opacity-20 px-4 border-qosdark mx-auto outline-none;
   }
-  input:focus {
+  input:not(input[type="radio"]):focus {
     @apply border-2 border-qosorange;
   }
-  input:valid {
+  
+  input:not(input[type="radio"]):valid {
     @apply border-qosgreen;
   }
   input[type="checkbox"],
   input[type="radio"] {
-    @apply appearance-none;
+    @apply appearance-none cursor-pointer p-0 h-5 w-5 inline-block relative;
   }
-  input[type="checkbox"],
+
   input[type="radio"] {
-    @apply p-0 h-5 w-5 inline-block;
+    @apply rounded-full;
   }
-  input[type="checkbox"]:checked {
-    @apply bg-qosgreen;
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    @apply bg-qosgreen outline-none;
   }
+  input[type="radio"]:checked::before{
+    content:'';
+    @apply bg-qosgray transform translate-x-1/2 translate-y-1/2 block h-1/2 w-1/2 rounded-full absolute;
+  }
+
+  input[type="radio"]:checked::before{
+    content:'';
+    @apply bg-qosgray transform translate-x-1/2 translate-y-1/2 block h-1/2 w-1/2 rounded-full absolute;
+  }
+
   input[type="checkbox"] + label,
   input[type="radio"] + label {
-    @apply inline-block w-10/12;
+    @apply inline-block w-10/12 cursor-pointer;
   }
+
   textarea {
     @apply h-24 w-full rounded-xl border border-opacity-20 px-4 border-qosdark;
   }
@@ -1196,17 +1209,12 @@
     -ms-overflow-style: none;
   }
   .stepStatus {
-    @apply bg-gradient-to-bl h-2 from-qosblue to-qosorange transition-all duration-200 origin-left                                         text-qosgray transform scale-75 w-8 p-1 text-opacity-0 rounded-full text-msm outline-none cursor-pointer;
+    @apply bg-gradient-to-bl h-2 from-qosblue to-qosorange transition-all duration-200 origin-left text-qosgray transform scale-75 w-8 p-1 text-opacity-0 rounded-full text-msm outline-none cursor-pointer;
   }
   .stepStatus.active {
     @apply bg-gradient-to-bl h-8 from-qosblue to-qosorange text-qosgray  scale-100;
   }
   .stepStatus.passed {
     @apply bg-gradient-to-bl from-qosgreen to-qosgreen text-qosgreen h-2 text-opacity-0;
-  }
-  #products::before{
-    content:'';
-    background:white;
-    @apply block h-6 w-6 transform rotate-45 -translate-y-1/2 p-4 rounded-sm absolute
   }
 }

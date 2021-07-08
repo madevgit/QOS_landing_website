@@ -26,14 +26,16 @@ export default function LandingPage() {
                     Many entrepries and start-up use our API to build everything from simple payment for few customers, to complex financial products serving several thousands of customes.
                 </P>
                 <div className="mt-20">
-                    <Link to="register" className="block md:inline mb-5"><button className="btn bg-gradient-to-tr from-qosblue to-qosorange text-qosgray inline-block">Create Account <i className="fi fi-rr-arrow-small-right inline-block"></i> </button></Link>
-                    <Link to="/documentation" className="block md:inline mb-5">
-                        <button className="btn rounded-full inline-block  bg-gradient-to-tr from-qosblue to-qosorange text-qosgray p-2 ml-2">
+                    <Link to="/register" className="block md:inline mb-5">
+                        <button className="p-2 rounded-md text-dmd font-normal bg-gradient-to-tr from-qosblue to-qosorange text-qosgray inline-block">Create Account </button>
+                    </Link>
+                    <Link to="/contact" className="block md:inline mb-5">
+                        <button className="btn rounded-full inline-block  bg-gradient-to-tr from-qosblue to-qosorange text-qosgray p-1.5 ml-4">
                             <div className="rounded-full flex items-center justify-center border border-qosgray h-6 w-6">
-                                <i className="fi fi-rr-arrow-small-right"></i>
+                                <i className="fi fi-rr-arrow-small-right text-msm align-bottom inline-block mt-1"></i>
                             </div>
                         </button>
-                        <P className="underline text-qosgray inline-block md:ml-4">
+                        <P className="underline text-qosgray inline-block md:ml-2">
                             Contact Sales
                         </P>
                     </Link>

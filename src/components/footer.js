@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import Address from './address'
 import Wrapper from './sectionWrapper'
 import QoSLogoDark from '../images/QOS_WHITE.png'
 import benin from '../images/benin.png'
-import naija from '../images/naija.png'
+import naija from '../images/naija.png' 
 export default function Footer() {
     return (
         <footer className="text-msm md:text-dsm">
@@ -56,20 +57,7 @@ export default function Footer() {
                     </nav>
                 </div>
                 <nav>
-                    <span className="font-mlg mb-2">Address</span>
-                    <div className="grid grid-flow-col gap-x-5">
-                        <div className="text-opacity-60 text-qosgray">
-                            <img className="block h-5 w-10 my-4" src={benin} alt="flag" />
-                            <span className="block">LOT: 902 - Maison </span>
-                            <span className="block">Houedanou Leonard,</span>
-                            <span>Quartier Sikecodji,Cotonou</span>
-                        </div>
-                        <div className="text-opacity-60 text-qosgray">
-                            <img className="block h-5 w-10 my-4" src={naija} alt="flag" />
-                            <span className="block">Lekki Gardens, Hi Tech</span>
-                            <span>Road, Ajah Lagos</span>
-                        </div>
-                    </div>
+                   <Address/>
                 </nav>
             </Wrapper>
             <Wrapper className="bg-qosdark h-16 text-qosgray text-opacity-70 text-msm md:text-dsm text-center py-4">

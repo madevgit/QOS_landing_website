@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
@@ -9,7 +10,11 @@ import FinancePage from './page/finance'
 import EntreprisePage from './page/entreprise'
 import MainLayout from './layouts/mianLayout'
 import DevelopersPage from './page/developers'
+import ContactPage from './page/contact'
 export default function App() {
+  useEffect(() => {
+   
+  })
   return (
     <MainLayout>
       <Navbar />
@@ -33,6 +38,9 @@ export default function App() {
       </Route>
       <Route path="/developers">
         <DevelopersPage />
+      </Route>
+      <Route path="/contact">
+        <ContactPage />
       </Route>
       <Footer />
     </MainLayout>

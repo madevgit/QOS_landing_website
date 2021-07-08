@@ -21,17 +21,19 @@ export default function Navbar() {
         })
     })
     return (
-        <Wrapper childrenClassName="flex h-8 md:h-10 items-center justify-between mt-2 md:mt-4" className="z-50 top-0 fixed w-full">
+        <Wrapper childrenClassName="flex h-8 md:h-10  items-center justify-between" className="z-50 top-0 bg-qosgray shadow-card rounded-none py-4 fixed w-full">
             <Link to="/">
                 <div class="h-full w-16">
-                    <img src={whiteLogo} class="h-full w-full" alt="QOS_LOGO" />
+                    <img src={darkLogo} class="h-full w-full" alt="QOS_LOGO" />
                 </div>
             </Link>
-            <nav id="navbarLink" className="w-6/12 max-h-full pt-3">
-                <ul className="hidden w-full text-mmd items-center justify-around text-qosgray text-opacity-80 md:flex">
+            <nav id="navbarLink" className="w-6/12 max-h-full">
+                <ul className="hidden w-full text-mmd items-center justify-around text-qosdark text-opacity-80 md:flex">
                     <li className="relative group">
-                        <Link id="product" to="#">Products</Link>
-                        <div id="products" className="pricingCard hidden group-hover:block mt-2 rounded-md px-4 absolute p-2 min-w-max text-qosdark">
+                        <Link id="product" to="#">Products
+                        <span className="fi fi-rr-angle-small-down align-bottom inline-block text-msm ml-1"></span>
+                        </Link>
+                        <div id="products" className="bg-qosgray z-0 -ml-10 scale-y-0 skew-x-6 group-hover:skew-x-0 -mt-24 group-hover:mt-0 opacity-0 group-hover:opacity-100 group-hover:scale-y-100 transform ease-out  duration-500 rounded-md px-4 absolute p-2 pt-5 min-w-max text-qosdark">
                             <nav className="grid grid-flow-col gap-x-6">
                                 <ul>
                                     <li className="mb-2 opacity-50 text-mmd">Payments</li>
@@ -125,15 +127,13 @@ export default function Navbar() {
                 </ul>
             </nav>
             <div className="flex items-center text-mmd">
-                <Link className="text-qosgray hidden md:inline-block" to="/login">
-                    Login
-                </Link>
-                <Link className="p-1 md:p-2 rounded-lg ml-4 bg-gradient-to-bl from-qosblue text-qosgray to-qosorange bg-opacity-70 hidden md:inline-block" to="/register">
-                    Create Account <span class="fi text-dmd fi-rr-angle-small-right"></span>
+            <Link to="/login" className="p-2.5 px-8 border-opacity-40 border-qosdark rounded-md border hidden md:inline-block">Login</Link>
+                <Link className="p-3 rounded-md ml-4 bg-gradient-to-bl from-qosblue text-qosgray to-qosorange hidden md:inline-block" to="/register">
+                    Create Account
                 </Link>
             </div>
             <button id="menuToggler" className="text-mH2 md:hidden">
-                <span className="fi transform-all duration-500 fi-rr-menu-burger text-qosgray"></span>
+                <span className="fi transform-all duration-500 fi-rr-menu-burger"></span>
             </button>
             <div id="mobileNav" className="pricingCard left-1/2 top-16 transform ml-10 scale-50 translate-x-1/2 opacity-0 min-w-max md:hidden transition-all duration-500 fixed rounded-lg p-4">
                 <div>
@@ -238,7 +238,6 @@ export default function Navbar() {
                                     <img className="inline-block h-5 w-5" src={shop} alt="hello" />
                                     <div className="ml-2" >
                                         <p className="text-msm opacity-70">Documentation</p>
-
                                     </div>
                                 </Link>
                             </li>
