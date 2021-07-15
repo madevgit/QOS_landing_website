@@ -21,7 +21,7 @@ export default function DevelopersPage() {
     }, [pathname]);
     return (
         <main>
-            <Wrapper className="pt-24 bg-qosgray bg-opacity-90">
+            <Wrapper className="pt-24 bg-qosgray">
                 <Route exact path="/developers">
                     <h2>Documention</h2>
                     <div>
@@ -232,7 +232,7 @@ export function PluginsAndLibraries() {
                         <span className="text-small md:text-msm opacity-60 block">Allow you receive money form your wordpress website</span>
                     </div></a>
             </section>
-            <section className="md:w-6/12 min-h-screen overflow-scroll my-4">
+            <section className="md:w-6/12 min-h-screen my-4">
                 <h2 className="font-medim opacity-80 mb-5 mt-10 md:mt-5">Libraries</h2>
                 <NavsTabs options={[{ name: 'PHP', content: <PhpLibrary /> }, { name: 'JAVASCRIPT', content: <JsLibrary /> }, { name: 'DJANGO', content: <DjangoLibrary /> }, { name: 'LARAVEL', content: <LaravelLibrary /> }]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex ${stickyDocsHeader && "fixed bg-qosgray z-50 top-16"} w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
             </section>
@@ -288,7 +288,7 @@ export function HeaderDocs() {
                 </div>
             </div>
             <Route path="/developers/api">
-                <nav className="grid font-medium pb-2 mt-4 grid-flow-col gap-x-4 hideScroll overflow-scroll px-6 lg:px-0 md:px-10 max-w-screen-lg mx-auto">
+                <nav className="flex font-medium pb-2 mt-4 md:justify-evenly hideScroll overflow-scroll md:mx-auto max-w-screen-lg mx-4">
                     <Link
                         className="docslinks relative text-center max-w-max"
                         to="/developers/api"
@@ -353,8 +353,8 @@ export function ApiDocs() {
     return (
         <div className="">
             <Route exact path="/developers/api">
-                <h2 className="mb-4 font-bold">Design</h2>
-                <p className=" md:w-8/12 mb-8">
+                <h2 className="mb-4 -mt-10 font-medium">Design</h2>
+                <p className="md:w-8/12 mb-8">
                     This document describes how a third party will connect to a
                     MobilePayment© Interface from QoS-IC. Note that all data formats and
                     response definitions are in conformance with the REST standard.
@@ -369,13 +369,13 @@ export function ApiDocs() {
                 </p>
             </Route>
             <Route exact path="/developers/api/test">
-                <h2 className="mt-20 mb-4 font-bold"> API Test</h2>
+                <h2 className="mb-4 font-medium mt-10">API Test</h2>
                 <p className="md:w-6/12">
                     Before you go to production you need to test your QOS API integration
                     without risk. So OOS give possibility to test integration safly way.
                 </p>
                 <div>
-                    <h3 className="font-bold text-mdm text-opacity-80 mt-8 text-qosdark">Authentification informations</h3>
+                    <h4 className="text-mdm font-normal text-opacity-80 mt-8 text-qosdark">Authentification informations</h4>
                     <div className="md:flex items-center mb-8">
                         <div className="md:w-6/12">
                             <p className="flex items-center mt-2">
@@ -402,14 +402,14 @@ export function ApiDocs() {
                 </p>
             </Route>
             <Route exact path="/developers/api/payment">
-                <div className="mt-10">
-                    <h2 className="font-bold mb-4">Payment</h2>
-                    <p>The RequestPayment is a request to debit mobile money from subscribers account.
+                <div className="">
+                    <h2 className="mb-4 font-medium mt-10">Payment</h2>
+                    <p className="md:w-6/12 my-4">The RequestPayment is a request to debit mobile money from subscribers account.
                         Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
                     <div className="md:flex justify-between items-center w-full">
                         <div className="md:w-6/12">
-                            <h4 className="font-medium mt-4">Request data</h4>
-                            <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                            <p className="font-normal text-md mt-4">Request data</p>
+                            <table className="docs text-msm md:text-dsm border-collapse mt-2 mb-8">
                                 <thead>
                                     <th>Element</th>
                                     <th>Type</th>
@@ -463,48 +463,51 @@ export function ApiDocs() {
                         </div>
                         <CodeBoard modes={code.Endpoints.payment.states} />
                     </div>
-                    
+
                 </div>
             </Route>
             <Route exact path="/developers/api/refund">
                 <div className="mt-10">
-                    <h2 className="font-bold mb-4">Refund</h2>
-                    <p className="mb-4">The Refund is a request to reverse mobile money back to the Subscriber’s mobile money account. Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
+                    <h2 className="mb-4 font-medium">Refund</h2>
+                    <p className="mb-4 md:w-6/12">The Refund is a request to reverse mobile money back to the Subscriber’s mobile money account. Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
                     <div>
-                        <span className="font-mono font-bold text-mmd">Endpoint URI:</span>
-                        <SimpleCodeBoard code={code.Endpoints.refund.uri} language='uri' />
+                        <span className="font-mono font-bold block text-mmd">Endpoint URI:</span>
+                        <SimpleCodeBoard code={code.Endpoints.refund.uri} language='URI' />
                     </div>
-                    <h4 className="font-medium mt-4">Request data</h4>
-                    <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
-                        <thead>
-                            <th>Element</th>
-                            <th>Type</th>
-                            <th>Decription</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="">transref</td>
-                                <td className="text-qosred font-normal">
-                                    <CodeBlock value="string:required" language="vim" />
-                                </td>
-                                <td className=""> transaction reference </td>
-                            </tr>
-                            <tr>
-                                <td>clientid</td>
-                                <td className="text-qosred font-normal">
-                                    <CodeBlock value="string:required" language="vim" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h4 className="font-medium mb-2 mt-4">Ex:</h4>
-                    <CodeBoard modes={code.Endpoints.refund.states} />
+                    <div className="md:flex justify-between items-center">
+                        <div>
+                            <h4 className="font-medium mt-4">Request data</h4>
+                            <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                                <thead>
+                                    <th>Element</th>
+                                    <th>Type</th>
+                                    <th>Decription</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="">transref</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="vim" />
+                                        </td>
+                                        <td className=""> transaction reference </td>
+                                    </tr>
+                                    <tr>
+                                        <td>clientid</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="vim" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <CodeBoard modes={code.Endpoints.refund.states} />
+                    </div>
                 </div>
             </Route>
             <Route exact path="/developers/api/transaction">
-                <div className="mt-10 py-4">
-                    <h2 className="font-bold mb-4">Transcation</h2>
+                <div className="mt-10">
+                <h2 className="mb-4 font-medium">Transaction</h2>
                     <p>A Get Transaction Status message is a request to get the details of an already processed transaction.</p>
                     <CodeBoard modes={code.Endpoints.transaction.states} />
                 </div>

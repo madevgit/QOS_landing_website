@@ -17,7 +17,6 @@ module.exports = {
       qosred: '#FC4F53',
       qosgreen: '#53FC4F',
       qosgray: '#FFFFFF'
-
     },
     spacing: {
       px: '1px',
