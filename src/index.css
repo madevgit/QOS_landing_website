@@ -4,7 +4,7 @@
 
 @layer base {
   @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
   :root,
   body {
     font-size: 16px;
@@ -1233,15 +1233,19 @@
   th {
     @apply border text-center p-1 border-qosdark border-opacity-40;
   }
+  table:not(.docs) td {
+    max-width: 120px;
+    @apply overflow-auto;
+  }
   table {
-    max-width: 100%;
+    @apply mx-auto
   }
   table.docs td,
   table.docs th {
     @apply w-28 md:w-36;
   }
-  code[class*="language-code"]{
-  @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
-  text-shadow:none
-}
+  code[class*="language-code"] {
+    @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
+    text-shadow: none;
+  }
 }

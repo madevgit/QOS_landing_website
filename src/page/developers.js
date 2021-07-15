@@ -21,7 +21,7 @@ export default function DevelopersPage() {
     }, [pathname]);
     return (
         <main>
-            <Wrapper className="pt-24 bg-qosgray bg-opacity-70">
+            <Wrapper className="pt-24 bg-qosgray bg-opacity-90">
                 <Route exact path="/developers">
                     <h2>Documention</h2>
                     <div>
@@ -86,7 +86,7 @@ export function NavsTabs({ options, activeStyle, notActiveStyle, mainStyle, comp
 export function JsLibrary() {
 
     return (
-        <div>
+        <div className="">
             <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12 rounded-lg flex">
                 <img src={github} alt="github" className="h-8 w-8 inline-block mr-4" />
                 <a href="#link" className="text-qosblue text-msm  md:text-dsm font-bold text-opacity-70 underline"> clone the full code repositry here </a>
@@ -107,53 +107,59 @@ export function JsLibrary() {
                     <p className="font-normal font-msm md:font-dsm text-qosdark text-opacity-70"> The following describes the important element required to be sent for display for</p>
                 </li>
             </ol>
-            <div className="max-w-full overflow-scroll my-4">
-                <table className="docs text-msm md:text-dsm table-fixed border-collapse border-qosdark">
-                    <thead>
-                        <th>Element</th>
-                        <th>Type</th>
-                        <th>Decription</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="">idDiv</td>
-                            <td className="text-qosred font-normal">string
-                                <pre>required</pre></td>
-                            <td className=""> div id </td>
-                        </tr>
-                        <tr>
-                            <td>clienId</td>
-                            <td className="text-qosred font-normal">string
-                                <pre>required</pre></td>
-                            <td>client id</td>
-                        </tr>
-                        <tr>
-                            <td>username</td>
-                            <td className="text-qosred font-normal">string
-                                <pre>required</pre></td>
-                            <td>username </td>
-                        </tr>
-                        <tr>
-                            <td>password</td>
-                            <td className="text-qosred font-normal">string
-                                <pre>required</pre></td>
-                            <td>client password </td>
-                        </tr>
-                        <tr>
-                            <td>montant</td>
-                            <td className="text-qosred font-normal">decimal
-                                <pre>required</pre></td>
-                            <td> amount to be send</td>
-                        </tr>
-                        <tr>
-                            <td>option</td>
-                            <td className="text-qosred font-normal">object
-                                <pre>optional</pre></td>
-                            <td> <div className="bg-qosdark h-20 w-full overflow-scroll text-small  "> <pre> <code className="language-javascript"> {`{\n    baseDirectory:'String:required', \n    pathImage:'String:optional', \n    textIntro:'string:optional', \n    business:'string:optional' \n  }`} </code> </pre></div> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table className="my-8 text-msm md:text-dsm border-collapse border-qosdark">
+                <thead>
+                    <th>Element</th>
+                    <th>Type</th>
+                    <th>Decription</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className="">idDiv</td>
+                        <td>
+                            <CodeBlock value="String:Required" />
+                        </td>
+                        <td className=""> div id </td>
+                    </tr>
+                    <tr>
+                        <td>clienId</td>
+                        <td>
+                            <CodeBlock value="String:Required" />
+                        </td>
+                        <td>client id</td>
+                    </tr>
+                    <tr>
+                        <td>username</td>
+                        <td className="text-qosred font-normal">
+                            <CodeBlock value="String:Required" />
+                        </td>
+                        <td>username </td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>
+                            <CodeBlock value="String:Required" />
+                        </td>
+                        <td>client password </td>
+                    </tr>
+                    <tr>
+                        <td>montant</td>
+                        <td className="text-qosred font-normal">
+                            <CodeBlock value="Number:Required" />
+                        </td>
+                        <td> amount to be send</td>
+                    </tr>
+                    <tr>
+                        <td>option</td>
+                        <td className="text-qosred font-normal">
+                            <CodeBlock value="Object:Required" />
+                        </td>
+                        <td>
+                            <SimpleCodeBoard code={`{\n    baseDirectory:'String:required', \n    pathImage:'String:optional', \n    textIntro:'string:optional', \n    business:'string:optional' \n  }`} language="jq" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <CodeBoard modes={code.Libs.javascript} />
         </div>
     )
@@ -226,7 +232,7 @@ export function PluginsAndLibraries() {
                         <span className="text-small md:text-msm opacity-60 block">Allow you receive money form your wordpress website</span>
                     </div></a>
             </section>
-            <section className="md:w-6/12 min-h-screen overflow-visible">
+            <section className="md:w-6/12 min-h-screen overflow-scroll my-4">
                 <h2 className="font-medim opacity-80 mb-5 mt-10 md:mt-5">Libraries</h2>
                 <NavsTabs options={[{ name: 'PHP', content: <PhpLibrary /> }, { name: 'JAVASCRIPT', content: <JsLibrary /> }, { name: 'DJANGO', content: <DjangoLibrary /> }, { name: 'LARAVEL', content: <LaravelLibrary /> }]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex ${stickyDocsHeader && "fixed bg-qosgray z-50 top-16"} w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
             </section>
@@ -300,13 +306,13 @@ export function HeaderDocs() {
                         to="/developers/api/auth"
                     >
                         Authentification
-                    </Link>
+                    </Link> */}
                     <Link
                         className="docslinks relative text-center max-w-max"
                         to="/developers/api/security"
                     >
                         Security
-                    </Link> */}
+                    </Link>
                     <Link
                         className="docslinks relative text-center max-w-max"
                         to="/developers/api/payment"
@@ -364,87 +370,100 @@ export function ApiDocs() {
             </Route>
             <Route exact path="/developers/api/test">
                 <h2 className="mt-20 mb-4 font-bold"> API Test</h2>
-                <p>
+                <p className="md:w-6/12">
                     Before you go to production you need to test your QOS API integration
                     without risk. So OOS give possibility to test integration safly way.
                 </p>
                 <div>
                     <h3 className="font-bold text-mdm text-opacity-80 mt-8 text-qosdark">Authentification informations</h3>
-                    <p className="flex items-center mt-2">
-                        <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">username:</span>
-                        <SimpleCodeBoard code="USR06" language='code' />
-                    </p>
-                    <p className="flex items-center mt-2">
-                        <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">password:</span>
-                        <SimpleCodeBoard code="YG739G5XFVPYYV4ADJVW" language='code' />
-                    </p>
-                    <NavsTabs options={[{ name: 'MTN Benin API', content: <MtnTestAuth index="0" /> }, { name: 'MOOV Africa API', content: <MtnTestAuth index="1" /> }]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex mt-4 w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
+                    <div className="md:flex items-center mb-8">
+                        <div className="md:w-6/12">
+                            <p className="flex items-center mt-2">
+                                <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">username:</span>
+                                <CodeBlock value="USR06" />
+                            </p>
+                            <p className="flex items-center mt-2">
+                                <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">password:</span>
+                                <CodeBlock value="YG739G5XFVPYYV4ADJVW" />
+                            </p>
+                        </div>
+                        <div>
+                            <NavsTabs options={[{ name: 'MTN Benin API', content: <MtnTestAuth index="0" /> }, { name: 'MOOV Africa API', content: <MtnTestAuth index="1" /> }]} activeStyle="btn-primary scale-120 bg-opacity-80" mainStyle={`p-2 flex mt-4 w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
+                        </div>
+                    </div>
                 </div>
             </Route>
             <Route exact path="/developers/api/auth">
                 Authentificaton information
             </Route>
             <Route exact path="/developers/api/security">
-                Securtiy information
+                <p className="mt-8">
+                    Requests will be sent over <CodeBlock value="HTTPS" /> only. Each request is also sent using a Basic Authentication. With Basic Authentication, clients send its Base64 encoded credentials with each request, using HTTP [Authorization] header. That means each request is independent of other request and server may/does not maintain any state information for the client.
+                </p>
             </Route>
             <Route exact path="/developers/api/payment">
                 <div className="mt-10">
                     <h2 className="font-bold mb-4">Payment</h2>
                     <p>The RequestPayment is a request to debit mobile money from subscribers account.
                         Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
-                    <h4 className="font-medium mt-4">Request data</h4>
-                    <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
-                        <thead>
-                            <th>Element</th>
-                            <th>Type</th>
-                            <th>Decription</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="">msisdn</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td className=""> transaction reference </td>
-                            </tr>
-                            <tr>
-                                <td>amount</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                            <tr>
-                                <td>firstname</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                            <tr>
-                                <td>lastname</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                            <tr>
-                                <td>transref</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                            <tr>
-                                <td>clientid</td>
-                                <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="code" />
-                                </td>
-                                <td> id of client </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <CodeBoard modes={code.Endpoints.payment.states} />
+                    <div className="md:flex justify-between items-center w-full">
+                        <div className="md:w-6/12">
+                            <h4 className="font-medium mt-4">Request data</h4>
+                            <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                                <thead>
+                                    <th>Element</th>
+                                    <th>Type</th>
+                                    <th>Decription</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="">msisdn</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td className=""> transaction reference </td>
+                                    </tr>
+                                    <tr>
+                                        <td>amount</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                    <tr>
+                                        <td>firstname</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                    <tr>
+                                        <td>lastname</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                    <tr>
+                                        <td>transref</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                    <tr>
+                                        <td>clientid</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="code" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <CodeBoard modes={code.Endpoints.payment.states} />
+                    </div>
+                    
                 </div>
             </Route>
             <Route exact path="/developers/api/refund">
@@ -466,14 +485,15 @@ export function ApiDocs() {
                             <tr>
                                 <td className="">transref</td>
                                 <td className="text-qosred font-normal">
-                                    <SimpleCodeBoard code="string:required" language="vim" />
+                                    <CodeBlock value="string:required" language="vim" />
                                 </td>
                                 <td className=""> transaction reference </td>
                             </tr>
                             <tr>
                                 <td>clientid</td>
-                                <td className="text-qosred font-normal">string
-                                    <pre>required</pre></td>
+                                <td className="text-qosred font-normal">
+                                    <CodeBlock value="string:required" language="vim" />
+                                </td>
                                 <td> id of client </td>
                             </tr>
                         </tbody>
@@ -483,14 +503,25 @@ export function ApiDocs() {
                 </div>
             </Route>
             <Route exact path="/developers/api/transaction">
-                <div className="mt-10">
-                    <h2>Transcation</h2>
+                <div className="mt-10 py-4">
+                    <h2 className="font-bold mb-4">Transcation</h2>
+                    <p>A Get Transaction Status message is a request to get the details of an already processed transaction.</p>
                     <CodeBoard modes={code.Endpoints.transaction.states} />
                 </div>
             </Route>
         </div>
     );
 }
+
+export function CodeBlock({ value }) {
+    return (
+        <div className="text-msm">
+            <pre className="font-mono max-w-full overflow-auto text-qosred text-opacity-80 inline-block p-0.5 bg-qosdark bg-opacity-10 rounded" >
+                {value}
+            </pre>
+        </div>)
+}
+
 export function DevOverview() {
     return (
         <div className="py-8 grid grid-cols-2 gap-x-5">
@@ -539,9 +570,9 @@ export function MtnTestAuth({ index }) {
     }]
     return (
         <div>
-            <p className="mt-2">
-                <span className="font-medium text-qosdark text-opacity-80 block mr-4">clientID:</span>
-                <SimpleCodeBoard code={infos[index].clientID} language='code' />
+            <p className="mt-2 flex items-center">
+                <span className="font-medium text-qosdark text-opacity-80 mr-4">clientID:</span>
+                <CodeBlock value={infos[index].clientID} />
             </p>
             <p className=" mt-2">
                 <span className="font-medium text-qosdark text-opacity-80 block mr-4">Requestpayment endpoint0:</span>
@@ -551,9 +582,9 @@ export function MtnTestAuth({ index }) {
                 <span className="font-medium text-qosdark text-opacity-80 block mr-4">GetTransactionStatus endpoint:</span>
                 <SimpleCodeBoard code={infos[index].GetTransactionStatus} language='http' />
             </p>
-            <p className="mt-2">
+            <p className="mt-2 flex items-center">
                 <span className="font-medium text-qosdark text-opacity-80 block mr-4">Numéro de test:</span>
-                <SimpleCodeBoard code={infos[index].numeroTest} language='code' />
+                <CodeBlock value={infos[index].numeroTest} />
             </p>
         </div>
     )
