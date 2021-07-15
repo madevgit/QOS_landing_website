@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Footer from './components/footer'
 import LandingPage from './page/landing'
@@ -11,10 +11,23 @@ import EntreprisePage from './page/entreprise'
 import MainLayout from './layouts/mianLayout'
 import DevelopersPage from './page/developers'
 import ContactPage from './page/contact'
+import Prism from 'prismjs'
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
+import 'prismjs/plugins/line-highlight/prism-line-highlight'
+import 'prismjs/components/prism-python'
+import 'prismjs/components/prism-js-extras'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-jq'
+import 'prismjs/components/prism-http'
+import 'prismjs/components/prism-uri'
+
 export default function App() {
+  const { pathname } = useLocation()
+
   useEffect(() => {
-   
-  })
+    Prism.highlightAll()
+  }, [pathname])
+  
   return (
     <MainLayout>
       <Navbar />

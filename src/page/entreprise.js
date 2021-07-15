@@ -1,6 +1,13 @@
+import {Link} from 'react-router-dom'
 import Wrapper from '../components/sectionWrapper'
 import illust from '../images/icons/third.svg'
+import sunu from '../images/media/sunu.png'
+import siroco from '../images/media/siroco.png'
+import ad from '../images/media/Pieuve.png'
+import padme from '../images/media/padme.png'
+import africaine from '../images/media/africainevie.png'
 
+const partners= [sunu,siroco,padme,africaine,ad]
 export default function EntreprisePage() {
     return (
         <Wrapper className="mt-24 " style={{ background: "url('./pictures/authpageBackground.png') 1% 50% rgba(255,255,255,0.1)" }}>
@@ -44,13 +51,18 @@ export default function EntreprisePage() {
                         <img className="h-full w-full" src={illust} alt="ValueIllustration" />
                     </div>
                     <div className="w-9/12">
-                        <h4 className="mb-2 font-normal">Simpliciy</h4>
+                        <h4 className="mb-2 font-normal">Simplicity</h4>
                         <p className="text-msm md:text-dsm">
                             Culpa dicta et sit ipsa blanditiis consectetur dolor et.Culpa dicta et sit ipsa blanditiis consectetur dolor et.
                         </p>
                     </div>
                 </div>
             </div>
+            <h3 className="mt-8">Ours Customers</h3>
+           <div className="flex w-full my-4 justify-around"> {partners.map(partner=><img className="h-20 w-40 inline-block" src={partner} alt=""/>)}</div>
+           <h3  className="mt-8 text-center">Will you work with  us ?</h3>
+           <Link to="/contact"><button className="btn btn-primary btn-md my-8 block mx-auto rounded-sm">Contact Us here <span class="fi fi-rr-arrow-small-right "></span></button></Link>
+
         </Wrapper>
     )
 }

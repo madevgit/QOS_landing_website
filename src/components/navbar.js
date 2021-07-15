@@ -21,7 +21,7 @@ export default function Navbar() {
         })
     })
     return (
-        <Wrapper childrenClassName="flex h-8 md:h-10  items-center justify-between" className="z-50 top-0 bg-qosgray shadow-card rounded-none py-4 fixed w-full">
+        <Wrapper childrenClassName="flex h-8 md:h-10  items-center justify-between" className="z-50 top-0 bg-qosgray bg-opacity-0 rounded-none py-4 fixed w-full">
             <Link to="/">
                 <div class="h-full w-16">
                     <img src={darkLogo} class="h-full w-full" alt="QOS_LOGO" />
@@ -127,7 +127,7 @@ export default function Navbar() {
                 </ul>
             </nav>
             <div className="flex items-center text-mmd">
-            <Link to="/login" className="p-2.5 px-8 border-opacity-40 border-qosdark rounded-md border hidden md:inline-block">Login</Link>
+            <Link to="/login" className="p-2.5 px-8 border-opacity-40 border-qosgray rounded-md border hidden md:inline-block">Login</Link>
                 <Link className="p-3 rounded-md ml-4 bg-gradient-to-bl from-qosblue text-qosgray to-qosorange hidden md:inline-block" to="/register">
                     Create Account
                 </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
             <button id="menuToggler" className="text-mH2 md:hidden">
                 <span className="fi transform-all duration-500 fi-rr-menu-burger"></span>
             </button>
-            <div id="mobileNav" className="pricingCard left-1/2 top-16 transform ml-10 scale-50 translate-x-1/2 opacity-0 min-w-max md:hidden transition-all duration-500 fixed rounded-lg p-4">
+            <div id="mobileNav" className="pricingCard left-1/2 top-20 transform ml-10 scale-50 translate-x-1/2 opacity-0 min-w-max md:hidden transition-all duration-500 fixed rounded-sm p-4">
                 <div>
                     <p className="text-mmdfont-bold mb-2 text-opacity-50 text-qosdark">Products</p>
                     <nav className="grid grid-flow-col gap-x-4 mb-2">
@@ -145,7 +145,7 @@ export default function Navbar() {
                                 <Link className="flex items-center mb-2" to="/">
                                     <img className="inline-block h-5 w-5" src={transfer} alt="hello" />
                                     <div className="ml-2 mb-2" >
-                                        <p className="text-msm opacity-70">Money transfer</p>
+                                        <p className="text-msm opacity-70">Online payment</p>
                                     </div>
                                 </Link>
                             </li>
@@ -153,7 +153,7 @@ export default function Navbar() {
                                 <Link className="flex items-center mb-2" to="/">
                                     <img className="inline-block h-5 w-5" src={invoice} alt="hello" />
                                     <div className="m-2" >
-                                        <p className="text-msm opacity-70">Invoice payment</p>
+                                        <p className="text-msm opacity-70">Offline payment</p>
 
                                     </div>
                                 </Link>
@@ -162,54 +162,18 @@ export default function Navbar() {
                                 <Link className="flex items-center mb-2" to="/">
                                     <img className="inline-block h-5 w-5" src={bill} alt="hello" />
                                     <div className="ml-2 mb-2" >
-                                        <p className="text-msm opacity-70">Bill payment</p>
-
+                                        <p className="text-msm opacity-70">Sharable link</p>
                                     </div>
                                 </Link>
                             </li>
                         </ul>
-                        <ul>
-                            <li className="mb-2 text-msm font-medium opacity-50">Services</li>
-                            <li>
-                                <Link className="flex items-center mb-2" to="/">
-                                    <img className="inline-block h-5 w-5" src={dbmigration} alt="hello" />
-                                    <div className="ml-2 mb-2" >
-                                        <p className="text-msm opacity-70">web development</p>
-
-                                    </div>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className="flex items-center mb-2" to="/">
-                                    <img className="inline-block h-5 w-5" src={webdev} alt="hello" />
-                                    <div className="ml-2 mb-2l" >
-                                        <p className="text-msm opacity-70">DB migration</p>
-
-                                    </div>
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav className="grid grid-flow-col">
                         <ul>
                             <li className="mb-2 text-msm font-medium opacity-50">Organization Services</li>
                             <li>
-                                <Link className="flex items-center" to="/">
+                                <Link className="flex items-center" to="/finance">
                                     <img className="inline-block h-5 w-5" src={digital} alt="hello" />
                                     <div className="ml-2 mb-2" >
-                                        <p className="text-msm opacity-70">Digital servcies</p>
-
-                                    </div>
-                                </Link>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li className="mb-2 text-msm font-medium opacity-50">Businness place</li>
-                            <li>
-                                <Link className="flex items-center" to="/">
-                                    <img className="inline-block h-5 w-5" src={shop} alt="hello" />
-                                    <div className="ml-2 mb-2" >
-                                        <p className="text-msm opacity-70">Marketplace</p>
+                                        <p className="text-msm opacity-70">Digital finance</p>
                                     </div>
                                 </Link>
                             </li>
@@ -222,7 +186,7 @@ export default function Navbar() {
                         <ul>
                             <p className="text-mmdfont-bold mb-4 text-opacity-50 text-qosdark">Company</p>
                             <li>
-                                <Link className="flex items-center" to="/">
+                                <Link className="flex items-center" to="/company">
                                     <img className="inline-block h-5 w-5" src={shop} alt="hello" />
                                     <div className="ml-2" >
                                         <p className="text-msm opacity-70">About Us</p>
@@ -234,7 +198,7 @@ export default function Navbar() {
                         <ul>
                             <p className="text-mmdfont-bold mb-4 text-opacity-50 text-qosdark">Developers</p>
                             <li>
-                                <Link className="flex items-center" to="/">
+                                <Link className="flex items-center" to="/developers">
                                     <img className="inline-block h-5 w-5" src={shop} alt="hello" />
                                     <div className="ml-2" >
                                         <p className="text-msm opacity-70">Documentation</p>
@@ -260,8 +224,8 @@ export default function Navbar() {
                     </nav>
                 </div>
                 <div className="flex items-center space-around w-11/12  mt-4">
-                    <button className="btn inline-flex btn-sm btn-primary rounded-sm">Create account</button>
-                    <button className="btn inline-flex p-1.5 px-8 border-opacity-40 border-qosdark btn-sm rounded-sm border ml-8">Login</button>
+                   <Link to="/register"> <button className="btn inline-flex btn-sm btn-primary rounded-sm">Create account</button></Link>
+                    <Link to="/login"> <button className="btn inline-flex p-1.5 px-8 border-opacity-40 border-qosdark btn-sm rounded-sm border ml-8">Login</button></Link>
                 </div>
             </div>
         </Wrapper>

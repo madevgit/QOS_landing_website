@@ -57,7 +57,7 @@ export default function Footer() {
                     </nav>
                 </div>
                 <nav>
-                   <Address/>
+                   <Address className="max-w-xs w-64"/>
                 </nav>
             </Wrapper>
             <Wrapper className="bg-qosdark h-16 text-qosgray text-opacity-70 text-msm md:text-dsm text-center py-4">

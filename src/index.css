@@ -4,6 +4,7 @@
 
 @layer base {
   @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
   :root,
   body {
     font-size: 16px;
@@ -1106,6 +1107,9 @@
   .btn {
     @apply rounded-xl shadow-md px-2 py-2 lg:px-4;
   }
+  button:active {
+    @apply duration-100 scale-90 transition-all transform;
+  }
   .btn-sm {
     @apply text-mmd;
   }
@@ -1139,7 +1143,7 @@
   input:not(input[type="radio"]):focus {
     @apply border-2 border-qosorange;
   }
-  
+
   input:not(input[type="radio"]):valid {
     @apply border-qosgreen;
   }
@@ -1155,13 +1159,13 @@
   input[type="radio"]:checked {
     @apply bg-qosgreen outline-none;
   }
-  input[type="radio"]:checked::before{
-    content:'';
+  input[type="radio"]:checked::before {
+    content: "";
     @apply bg-qosgray transform translate-x-1/2 translate-y-1/2 block h-1/2 w-1/2 rounded-full absolute;
   }
 
-  input[type="radio"]:checked::before{
-    content:'';
+  input[type="radio"]:checked::before {
+    content: "";
     @apply bg-qosgray transform translate-x-1/2 translate-y-1/2 block h-1/2 w-1/2 rounded-full absolute;
   }
 
@@ -1188,7 +1192,7 @@
   h4 {
     @apply text-mST lg:text-dST font-bold text-opacity-70;
   }
- 
+
   #Landing {
     background: linear-gradient(
         209.03deg,
@@ -1201,6 +1205,7 @@
         rgba(252, 162, 79, 0.125) 101.69%
       );
   }
+
   .hideScroll::-webkit-scrollbar {
     display: none;
   }
@@ -1216,5 +1221,23 @@
   }
   .stepStatus.passed {
     @apply bg-gradient-to-bl from-qosgreen to-qosgreen text-qosgreen h-2 text-opacity-0;
+  }
+  .docslinks::after {
+    content: "";
+    @apply h-0.5 w-full block transform duration-500 scale-0 transition-all absolute bg-qosblue rounded-full;
+  }
+  .docslinks.text-qosblue::after {
+    @apply scale-100 origin-center;
+  }
+  table td,
+  th {
+    @apply border border-qosdark border-opacity-60;
+  }
+  table {
+    max-width: 100%;
+  }
+  table.docs td,
+  table.docs th {
+    @apply w-28 md:w-36;
   }
 }
