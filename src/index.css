@@ -1231,7 +1231,7 @@
   }
   table td,
   th {
-    @apply border border-qosdark border-opacity-60;
+    @apply border text-center p-1 border-qosdark border-opacity-40;
   }
   table {
     max-width: 100%;
@@ -1240,4 +1240,8 @@
   table.docs th {
     @apply w-28 md:w-36;
   }
+  code[class*="language-code"]{
+  @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
+  text-shadow:none
+}
 }

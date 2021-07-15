@@ -68,10 +68,10 @@ export default function DevelopersPage() {
 export function NavsTabs({ options, activeStyle, notActiveStyle, mainStyle, components }) {
     const [active, setActive] = useState(0)
     const current = options[active]
-    useEffect(()=>{
-       setTimeout(()=>{
-        Prism.highlightAll()
-       },0)
+    useEffect(() => {
+        setTimeout(() => {
+            Prism.highlightAll()
+        }, 0)
     })
     return (
         <>
@@ -107,7 +107,7 @@ export function JsLibrary() {
                     <p className="font-normal font-msm md:font-dsm text-qosdark text-opacity-70"> The following describes the important element required to be sent for display for</p>
                 </li>
             </ol>
-            <div className="max-w-full overflow-scroll">
+            <div className="max-w-full overflow-scroll my-4">
                 <table className="docs text-msm md:text-dsm table-fixed border-collapse border-qosdark">
                     <thead>
                         <th>Element</th>
@@ -371,14 +371,14 @@ export function ApiDocs() {
                 <div>
                     <h3 className="font-bold text-mdm text-opacity-80 mt-8 text-qosdark">Authentification informations</h3>
                     <p className="flex items-center mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 inline-block mr-4">username:</span>
-                        <SimpleCodeBoard code="USR06" language='txt' />
+                        <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">username:</span>
+                        <SimpleCodeBoard code="USR06" language='code' />
                     </p>
                     <p className="flex items-center mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 inline-block mr-4">password:</span>
-                        <SimpleCodeBoard code="YG739G5XFVPYYV4ADJVW" language='txt' />
+                        <span className="font-medium text-qosdark text-opacity-80 inline-block mr-4">password:</span>
+                        <SimpleCodeBoard code="YG739G5XFVPYYV4ADJVW" language='code' />
                     </p>
-                    <NavsTabs options={[{ name: 'MTN Benin API', content: <MtnTestAuth index="0" /> }, { name: 'MOOV Africa API', content: <MtnTestAuth index="1" />}]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex mt-4 w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
+                    <NavsTabs options={[{ name: 'MTN Benin API', content: <MtnTestAuth index="0" /> }, { name: 'MOOV Africa API', content: <MtnTestAuth index="1" /> }]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex mt-4 w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
                 </div>
             </Route>
             <Route exact path="/developers/api/auth">
@@ -388,28 +388,105 @@ export function ApiDocs() {
                 Securtiy information
             </Route>
             <Route exact path="/developers/api/payment">
-              <div className="mt-10">
-                <h2>Payment</h2>
-                <p></p>
-              <CodeBoard modes={code.Endpoints.payment.states} />
-              </div>
+                <div className="mt-10">
+                    <h2 className="font-bold mb-4">Payment</h2>
+                    <p>The RequestPayment is a request to debit mobile money from subscribers account.
+                        Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
+                    <h4 className="font-medium mt-4">Request data</h4>
+                    <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                        <thead>
+                            <th>Element</th>
+                            <th>Type</th>
+                            <th>Decription</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="">msisdn</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td className=""> transaction reference </td>
+                            </tr>
+                            <tr>
+                                <td>amount</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td> id of client </td>
+                            </tr>
+                            <tr>
+                                <td>firstname</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td> id of client </td>
+                            </tr>
+                            <tr>
+                                <td>lastname</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td> id of client </td>
+                            </tr>
+                            <tr>
+                                <td>transref</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td> id of client </td>
+                            </tr>
+                            <tr>
+                                <td>clientid</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="code" />
+                                </td>
+                                <td> id of client </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <CodeBoard modes={code.Endpoints.payment.states} />
+                </div>
             </Route>
             <Route exact path="/developers/api/refund">
-            <div className="mt-10">
-                <h2 className="font-bold mb-4">Refund</h2>
-                <p className="mb-4">The Refund is a request to reverse mobile money back to the Subscriber’s mobile money account. Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
-                <div>
-                <span className="font-mono font-bold text-mmd">Endpoint URI:</span>
-                <SimpleCodeBoard code={code.Endpoints.refund.uri} language='uri' />
+                <div className="mt-10">
+                    <h2 className="font-bold mb-4">Refund</h2>
+                    <p className="mb-4">The Refund is a request to reverse mobile money back to the Subscriber’s mobile money account. Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
+                    <div>
+                        <span className="font-mono font-bold text-mmd">Endpoint URI:</span>
+                        <SimpleCodeBoard code={code.Endpoints.refund.uri} language='uri' />
+                    </div>
+                    <h4 className="font-medium mt-4">Request data</h4>
+                    <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                        <thead>
+                            <th>Element</th>
+                            <th>Type</th>
+                            <th>Decription</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="">transref</td>
+                                <td className="text-qosred font-normal">
+                                    <SimpleCodeBoard code="string:required" language="vim" />
+                                </td>
+                                <td className=""> transaction reference </td>
+                            </tr>
+                            <tr>
+                                <td>clientid</td>
+                                <td className="text-qosred font-normal">string
+                                    <pre>required</pre></td>
+                                <td> id of client </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4 className="font-medium mb-2 mt-4">Ex:</h4>
+                    <CodeBoard modes={code.Endpoints.refund.states} />
                 </div>
-              <CodeBoard modes={code.Endpoints.refund.states} />
-              </div>
             </Route>
             <Route exact path="/developers/api/transaction">
-               <div className="mt-10">
-                   <h2>Transcation</h2>
-                   <CodeBoard modes={code.Endpoints.transaction.states}/>
-               </div>
+                <div className="mt-10">
+                    <h2>Transcation</h2>
+                    <CodeBoard modes={code.Endpoints.transaction.states} />
+                </div>
             </Route>
         </div>
     );
@@ -448,36 +525,36 @@ export function DevOverview() {
         </div>
     );
 }
-export function MtnTestAuth({index}){
-    const infos=[{
-        clientID:"UBHQ",
-        Requestpayment:'http://74.208.84.251:8221/QosicBridge/user/requestpayment',
-        GetTransactionStatus:'http://74.208.84.251:8221/QosicBridge/user/gettransactionstatus',
-        numeroTest:'+229 67222918'
-    },{
-        clientID:"MOOVTEST",
-        Requestpayment:'http://74.208.84.251:8221/QosicBridge/user/requestpaymentmv',
-        GetTransactionStatus:'http://74.208.84.251:8221/QosicBridge/user/gettransactionstatus',
-        numeroTest:'+229 99914337'
+export function MtnTestAuth({ index }) {
+    const infos = [{
+        clientID: "UBHQ",
+        Requestpayment: 'http://74.208.84.251:8221/QosicBridge/user/requestpayment',
+        GetTransactionStatus: 'http://74.208.84.251:8221/QosicBridge/user/gettransactionstatus',
+        numeroTest: '+229 67222918'
+    }, {
+        clientID: "MOOVTEST",
+        Requestpayment: 'http://74.208.84.251:8221/QosicBridge/user/requestpaymentmv',
+        GetTransactionStatus: 'http://74.208.84.251:8221/QosicBridge/user/gettransactionstatus',
+        numeroTest: '+229 99914337'
     }]
-    return(
+    return (
         <div>
-             <p className="mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 block mr-4">clientID:</span>
-                        <SimpleCodeBoard code={infos[index].clientID} language='txt' />
-                    </p>
-                    <p className=" mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 block mr-4">Requestpayment endpoint0:</span>
-                        <SimpleCodeBoard code={infos[index].Requestpayment} language='http' />
-                    </p>
-                    <p className="mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 block mr-4">GetTransactionStatus endpoint:</span>
-                        <SimpleCodeBoard code={infos[index].GetTransactionStatus} language='http' />
-                    </p>
-                    <p className="mt-2">
-                        <span className="text-qosred text-msm text-opacity-70 block mr-4">Numéro de test:</span>
-                        <SimpleCodeBoard code={infos[index].numeroTest} language='txt' />
-                    </p>
+            <p className="mt-2">
+                <span className="font-medium text-qosdark text-opacity-80 block mr-4">clientID:</span>
+                <SimpleCodeBoard code={infos[index].clientID} language='code' />
+            </p>
+            <p className=" mt-2">
+                <span className="font-medium text-qosdark text-opacity-80 block mr-4">Requestpayment endpoint0:</span>
+                <SimpleCodeBoard code={infos[index].Requestpayment} language='http' />
+            </p>
+            <p className="mt-2">
+                <span className="font-medium text-qosdark text-opacity-80 block mr-4">GetTransactionStatus endpoint:</span>
+                <SimpleCodeBoard code={infos[index].GetTransactionStatus} language='http' />
+            </p>
+            <p className="mt-2">
+                <span className="font-medium text-qosdark text-opacity-80 block mr-4">Numéro de test:</span>
+                <SimpleCodeBoard code={infos[index].numeroTest} language='code' />
+            </p>
         </div>
     )
 }

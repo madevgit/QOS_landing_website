@@ -14,8 +14,8 @@ import ContactPage from './page/contact'
 import Prism from 'prismjs'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import 'prismjs/plugins/line-highlight/prism-line-highlight'
+import 'prismjs/plugins/command-line/prism-command-line'
 import 'prismjs/components/prism-python'
-import 'prismjs/components/prism-js-extras'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-jq'
 import 'prismjs/components/prism-http'
@@ -27,7 +27,7 @@ export default function App() {
   useEffect(() => {
     Prism.highlightAll()
   }, [pathname])
-  
+
   return (
     <MainLayout>
       <Navbar />
