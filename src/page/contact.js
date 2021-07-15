@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Wrapper from '../components/sectionWrapper'
 import Address from '../components/address'
 export default function ContactPage() {
-    const [OtherReason, setOtherReason] = useState(false)
+    const [OtherReason, setOtherReason] = useState(true)
     return (<Wrapper style={{ background: "linear-gradient(209.03deg,rgba(79, 83, 252, 0.48) 107.84%,rgba(252, 162, 79, 0.424) 101.69%),linear-gradient(209.03deg,rgba(79, 83, 252, 0.48) 17.84%,rgba(252, 162, 79, 0.424) 101.69%)" }} childrenClassName="transform md:scale-90" className="py-24 md:py-4">
         <h2 className="font-medium text-center text-qosgray md:mt-16 md:w-10/12 mx-auto">Contact Us</h2>
         <p class="mt-4 md:w-7/12 mx-auto text-center text-qosgray text-mlg md:text-dlg font-medium">
@@ -38,7 +38,7 @@ export default function ContactPage() {
                 </div>
                 <label className="block mt-4 px-2">What's your reason ?</label>
                 <div className="md:flex justify-around w-full">
-                    <div onClick={(e) => setOtherReason(false)} className="flex items-end mt-1 mx-auto w-full">
+                    {/* <div onClick={(e) => setOtherReason(false)} className="flex items-end mt-1 mx-auto w-full">
                         <input id="TechSupport" value="TechSupport" type="radio" name="object" required />
                         <label htmlFor="TechSupport" class="text-msm font-normal ">Technical Support</label>
                     </div>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                     <div onClick={(e) => setOtherReason(e.target.checked)} className="flex items-end mt-1 mx-auto w-full">
                         <input id="other" value="other" type="radio" name="object" required />
                         <label htmlFor="other" className="text-msm font-normal ">Other</label>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={`mx-auto w-full px-2 overflow-hidden transform ${OtherReason ? 'scale-y-100 h-auto my-2' : 'h-0'} duration-500`}>
                     <input type="text" name="object" required placeholder="Tell us please " />
