@@ -41,7 +41,7 @@ export default function Navbar() {
                                         <Link className="flex items-center mb-2" to="/">
                                             <img className="inline-block h-8 w-8" src={transfer} alt="hello" />
                                             <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">Money transfer</p>
+                                                <p className="text-dsm opacity-70">Online payment</p>
                                                 <p className="text-msm opacity-40">plateform to send money</p>
                                             </div>
                                         </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
                                         <Link className="flex items-center mb-2" to="/">
                                             <img className="inline-block h-8 w-8" src={invoice} alt="hello" />
                                             <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">Invoice payment</p>
+                                                <p className="text-dsm opacity-70">Offline payment</p>
                                                 <p className="text-msm opacity-40">pay at time your invoices</p>
                                             </div>
                                         </Link>
@@ -59,29 +59,8 @@ export default function Navbar() {
                                         <Link className="flex items-center mb-2" to="/">
                                             <img className="inline-block h-8 w-8" src={bill} alt="hello" />
                                             <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">Bill payment</p>
+                                                <p className="text-dsm opacity-70">Sharable link</p>
                                                 <p className="text-msm opacity-40">manage your bills easly</p>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li className="mb-2 text-mmd opacity-50">Services</li>
-                                    <li>
-                                        <Link className="flex items-center mb-2" to="/">
-                                            <img className="inline-block h-8 w-8" src={dbmigration} alt="hello" />
-                                            <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">web development</p>
-                                                <p className="text-msm opacity-40">Design and build professional website</p>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="flex items-center mb-2" to="/">
-                                            <img className="inline-block h-8 w-8" src={webdev} alt="hello" />
-                                            <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">DB migration</p>
-                                                <p className="text-msm opacity-40">database design & maintenance</p>
                                             </div>
                                         </Link>
                                     </li>
@@ -91,7 +70,7 @@ export default function Navbar() {
                                 <ul>
                                     <li className="mb-2 text-mmd opacity-50">Organization Services</li>
                                     <li>
-                                        <Link className="flex items-center" to="/">
+                                        <Link className="flex items-center" to="/finance">
                                             <img className="inline-block h-8 w-8" src={digital} alt="hello" />
                                             <div className="ml-2" >
                                                 <p className="text-dsm opacity-70">Digital servcies</p>
@@ -100,19 +79,7 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                 </ul>
-                                <ul>
-                                    <li className="mb-2 text-mmd opacity-50">Businness place</li>
-                                    <li>
-                                        <Link className="flex items-center" to="/">
-                                            <img className="inline-block h-8 w-8" src={shop} alt="hello" />
-                                            <div className="ml-2" >
-                                                <p className="text-dsm opacity-70">Marketplace</p>
-                                                <p className="text-msm opacity-40">plateform to send money</p>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </nav>
+                               </nav>
                         </div>
                     </li>
                     <li>

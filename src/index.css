@@ -11,6 +11,12 @@
     font-family: "Poppins";
     font-weigth: 400;
     @apply text-qosdark;
+    background: linear-gradient(
+      299.64deg,
+      #c3d1e4 -0.02%,
+      #dde7f3 54.14%,
+      #d4e0ed 100.43%
+    );
   }
   @font-face {
     font-family: "uicons-regular-rounded";
@@ -1243,6 +1249,6 @@
   }
   code[class*="language-code"] {
     @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
-    text-shadow: none;
+    shadow: none;
   }
 }

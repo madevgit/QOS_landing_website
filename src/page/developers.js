@@ -21,7 +21,7 @@ export default function DevelopersPage() {
     }, [pathname]);
     return (
         <main>
-            <Wrapper className="pt-24 bg-qosgray">
+            <Wrapper className="pt-24">
                 <Route exact path="/developers">
                     <h2>Documention</h2>
                     <div>
@@ -34,21 +34,21 @@ export default function DevelopersPage() {
                     </div>
 
                     <Link to="/contact">
-                        {" "}
+
                         <button className="btn btn-active btn-sm rounded inline-block my-4 mr-2">
                             Custumer assistance
-                        </button>{" "}
+                        </button>
                     </Link>
                     <Link to="/register">
-                        {" "}
+
                         <button className="btn btn-primary btn-sm rounded inline-block md:my-4">
                             Create account
-                        </button>{" "}
+                        </button>
                     </Link>
                 </Route>
                 <HeaderDocs />
-                <div className="relative min-h-screen flex justify-between">
-                    <div className={`md:w-10/12 w-full ${goBack && "mt-20"}`}>
+                <div className="relative my-16">
+                    <div className={`mx-auto w-full ${goBack && "mt-20"}`}>
                         <Route exact path="/developers">
                             <DevOverview />
                         </Route>
@@ -69,9 +69,9 @@ export function NavsTabs({ options, activeStyle, notActiveStyle, mainStyle, comp
     const [active, setActive] = useState(0)
     const current = options[active]
     useEffect(() => {
-        setTimeout(() => {
-            Prism.highlightAll()
-        }, 0)
+
+        Prism.highlightAll()
+
     })
     return (
         <>
@@ -87,7 +87,7 @@ export function JsLibrary() {
 
     return (
         <div className="">
-            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12 rounded-lg flex">
+            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12  rounded-lg flex">
                 <img src={github} alt="github" className="h-8 w-8 inline-block mr-4" />
                 <a href="#link" className="text-qosblue text-msm  md:text-dsm font-bold text-opacity-70 underline"> clone the full code repositry here </a>
             </div>
@@ -167,7 +167,7 @@ export function JsLibrary() {
 export function PhpLibrary() {
     return (
         <div>
-            <div className="bg-qosgray bg-opacity-70 py-5 px-4 shadow-md mb-5 items-center w-11/12 rounded-lg flex">
+            <div className="bg-qosgray bg-opacity-70 py-5 px-4 shadow-md mb-5 items-center w-11/12  max-w-max  rounded-lg flex">
                 <img src={github} alt="github" className="h-8 w-8 inline-block mr-4" />
                 <a href="#link" className="text-qosblue text-msm  md:text-dsm font-bold text-opacity-70 underline"> clone the full code repositry here </a>
             </div>
@@ -178,7 +178,7 @@ export function PhpLibrary() {
 export function DjangoLibrary() {
     return (
         <div>
-            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12 rounded-lg flex">
+            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12  max-w-max  rounded-lg flex">
                 <img src={github} alt="github" className="h-8 w-8 inline-block mr-4" />
                 <a href="#link" className="text-qosblue text-msm  md:text-dsm font-bold text-opacity-70 underline"> clone the full code repositry here </a>
             </div>
@@ -189,11 +189,11 @@ export function DjangoLibrary() {
 export function LaravelLibrary() {
     return (
         <div>
-            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12 rounded-lg flex">
+            <div className="bg-qosgray py-5 px-4 shadow-md mb-5 items-center w-11/12 max-w-max rounded-lg flex">
                 <img src={github} alt="github" className="h-8 w-8 inline-block mr-4" />
                 <a href="#link" className="text-qosblue text-msm  md:text-dsm font-bold text-opacity-70 underline"> clone the full code repositry here </a>
             </div>
-            <div className="border-2 p-2 text-qosdark text-opacity-70 border-qosred border-opacity-30 rounded-lg mb-5 text-center">
+            <div className="border-2 p-2 text-qosdark text-opacity-70 max-w-max border-qosred border-opacity-30 rounded-lg mb-5 text-center">
                 <span className="fi fi-rr-info text-qosred text-opacity-70  inline-block mr-2"></span>
                 <span>You need to install <b>Guzzle first</b> </span>
             </div>
@@ -222,18 +222,18 @@ export function PluginsAndLibraries() {
         })
     })
     return (
-        <div className="md:flex justify-between">
+        <div className="md:flex justify-between w-full mx-auto">
             <section className="md:w-3/12">
-                <h2 className="font-medim opacity-80 mt-5">Plugins</h2>
-                <a className="flex bg-qosgray w-64 md:w-72 rounded-lg shadow-md mt-4 p-2 h-16 justify-between items-center" href="https://fr.wordpress.org/plugins/qos-payment-gateway/">
+                <h2 className="font-medium opacity-80 mt-5">Plugins</h2>
+                <a className="flex bg-qosgray w-64 md:w-65 rounded-lg shadow-md mt-4 p-2 h-16 justify-between items-center" href="https://fr.wordpress.org/plugins/qos-payment-gateway/">
                     <img src={wp} className="h-11 w-2/12" alt="pluginswordpress" />
                     <div className="w-10/12 pl-4">
-                        <span className="font-bold inline-block ">Wordpress plugin</span>
+                        <span className="font-medium inline-block ">Wordpress plugin</span>
                         <span className="text-small md:text-msm opacity-60 block">Allow you receive money form your wordpress website</span>
                     </div></a>
             </section>
-            <section className="md:w-6/12 min-h-screen my-4">
-                <h2 className="font-medim opacity-80 mb-5 mt-10 md:mt-5">Libraries</h2>
+            <section className="md:w-7/12 min-h-screen">
+                <h2 className="font-medium opacity-80 mt-5">Libraries</h2>
                 <NavsTabs options={[{ name: 'PHP', content: <PhpLibrary /> }, { name: 'JAVASCRIPT', content: <JsLibrary /> }, { name: 'DJANGO', content: <DjangoLibrary /> }, { name: 'LARAVEL', content: <LaravelLibrary /> }]} activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80" mainStyle={`p-2 flex ${stickyDocsHeader && "fixed bg-qosgray z-50 top-16"} w-full left-0 justify-around mb-5 text-mmd md:text-dmd`} />
             </section>
         </div>
@@ -354,19 +354,25 @@ export function ApiDocs() {
         <div className="">
             <Route exact path="/developers/api">
                 <h2 className="mb-4 -mt-10 font-medium">Design</h2>
-                <p className="md:w-8/12 mb-8">
-                    This document describes how a third party will connect to a
-                    MobilePayment© Interface from QoS-IC. Note that all data formats and
-                    response definitions are in conformance with the REST standard.
-                </p>
-                <p className="md:w-8/12">
-                    A MobilePayment© transaction provides Mobile Money capability
-                    application programming interfaces (APIs) for third-party applications
-                    (App for short) to connect to it and use its Mobile Money capability
-                    for Bill Payment, Depositing Money in Subscribers account & Querying
-                    Subscriber’s account in a third-party system. The subsequent sections
-                    show the message structure for Mobile Payment
-                </p>
+                <div className="md:flex">
+                    <div>
+                        <p className="md:w-8/12">
+                            A MobilePayment© transaction provides Mobile Money capability
+                            application programming interfaces (APIs) for third-party applications
+                            (App for short) to connect to it and use its Mobile Money capability
+                            for Bill Payment, Depositing Money in Subscribers account & Querying
+                            Subscriber’s account in a third-party system. The subsequent sections
+                            show the message structure for Mobile Payment
+                        </p>
+                    </div>
+                    <div className="mt-4 md:mt-0">
+                        <div className="max-w-max">
+                            <span className="font-mono font-bold block text-mmd">API baseUrl:</span>
+                            <SimpleCodeBoard code={`http://74.208.84.251:8221/QosicBridge/user`} language="http" />
+                        </div>
+                    </div>
+                </div>
+
             </Route>
             <Route exact path="/developers/api/test">
                 <h2 className="mb-4 font-medium mt-10">API Test</h2>
@@ -403,12 +409,15 @@ export function ApiDocs() {
             </Route>
             <Route exact path="/developers/api/payment">
                 <div className="">
-                    <h2 className="mb-4 font-medium mt-10">Payment</h2>
-                    <p className="md:w-6/12 my-4">The RequestPayment is a request to debit mobile money from subscribers account.
+                    <h2 className="mb-4 font-medium mt-20">Payment</h2>
+                    <p className="lg:w-6/12 my-4">The RequestPayment is a request to debit mobile money from subscribers account.
                         Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
-                    <div className="md:flex justify-between items-center w-full">
-                        <div className="md:w-6/12">
-                            <p className="font-normal text-md mt-4">Request data</p>
+                    <div className="max-w-max">
+                        <span className="font-mono font-bold block text-mmd">Endpoint URI:</span>
+                        <SimpleCodeBoard code={code.Endpoints.payment.uri} language='URI' />
+                    </div>
+                    <div className="lg:flex justify-between items-center w-full">
+                        <div className="lg:w-6/12">
                             <table className="docs text-msm md:text-dsm border-collapse mt-2 mb-8">
                                 <thead>
                                     <th>Element</th>
@@ -461,20 +470,38 @@ export function ApiDocs() {
                                 </tbody>
                             </table>
                         </div>
-                        <CodeBoard modes={code.Endpoints.payment.states} />
+                        <div className="lg:-mt-16 lg:w-6/12">
+                            <div className="md:flex justify-between">
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosgreen md:font-normal md:text-dH3 text-dmd inline-block mt-4  fi-rr-check"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Succes Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.SuccessCode} language='http' />
+                                    </div>
+                                </div>
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosred md:font-normal md:text-dH3 text-dmd inline-block mt-4 fi-rr-cross"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Failded Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.FailedCode} language='http' />
+                                    </div>
+                                </div>
+                            </div>
+                            <CodeBoard modes={code.Endpoints.payment.states} />
+                        </div>
                     </div>
 
                 </div>
             </Route>
             <Route exact path="/developers/api/refund">
-                <div className="mt-10">
+                <div className="mt-20">
                     <h2 className="mb-4 font-medium">Refund</h2>
                     <p className="mb-4 md:w-6/12">The Refund is a request to reverse mobile money back to the Subscriber’s mobile money account. Partners must code the App based on the API field requirements so that the App can send correct requests accordingly.</p>
                     <div>
                         <span className="font-mono font-bold block text-mmd">Endpoint URI:</span>
                         <SimpleCodeBoard code={code.Endpoints.refund.uri} language='URI' />
                     </div>
-                    <div className="md:flex justify-between items-center">
+                    <div className="lg:flex justify-between items-center">
                         <div>
                             <h4 className="font-medium mt-4">Request data</h4>
                             <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
@@ -501,15 +528,83 @@ export function ApiDocs() {
                                 </tbody>
                             </table>
                         </div>
-                        <CodeBoard modes={code.Endpoints.refund.states} />
+                        <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            :-mt-16">
+                            <div className="md:flex justify-between">
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosgreen md:font-normal md:text-dH3 text-dmd inline-block mt-4  fi-rr-check"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Succes Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.SuccessCode} language='http' />
+                                    </div>
+                                </div>
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosred md:font-normal md:text-dH3 text-dmd inline-block mt-4 fi-rr-cross"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Failded Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.FailedCode} language='http' />
+                                    </div>
+                                </div>
+                            </div>
+                            <CodeBoard modes={code.Endpoints.refund.states} />
+                        </div>
                     </div>
                 </div>
             </Route>
             <Route exact path="/developers/api/transaction">
                 <div className="mt-10">
-                <h2 className="mb-4 font-medium">Transaction</h2>
+                    <h2 className="mb-4 font-medium">Transaction</h2>
                     <p>A Get Transaction Status message is a request to get the details of an already processed transaction.</p>
-                    <CodeBoard modes={code.Endpoints.transaction.states} />
+                    <div className="mt-4">
+                        <span className="font-mono font-bold block text-mmd">Endpoint URI:</span>
+                        <SimpleCodeBoard code={code.Endpoints.transaction.uri} language='URI' />
+                    </div>
+                    <div className="lg:flex justify-between items-center">
+                        <div>
+                            <h4 className="font-medium mt-4">Request data</h4>
+                            <table className="docs text-msm md:text-dsm table-fixed border-collapse mt-2 mb-8">
+                                <thead>
+                                    <th>Element</th>
+                                    <th>Type</th>
+                                    <th>Decription</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td className="">transref</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="vim" />
+                                        </td>
+                                        <td className=""> transaction reference </td>
+                                    </tr>
+                                    <tr>
+                                        <td>clientid</td>
+                                        <td className="text-qosred font-normal">
+                                            <CodeBlock value="string:required" language="vim" />
+                                        </td>
+                                        <td> id of client </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="lg:-mt-20">
+                            <div className="md:flex justify-between">
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosgreen md:font-normal md:text-dH3 text-dmd inline-block mt-4  fi-rr-check"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Succes Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.SuccessCode} language='http' />
+                                    </div>
+                                </div>
+                                <div className="max-w-max flex  items-center">
+                                    <span className="fi text-qosred md:font-normal md:text-dH3 text-dmd inline-block mt-4 fi-rr-cross"></span>
+                                    <div className="ml-4">
+                                        <span className="font-mono font-bold block text-mmd">Failded Code</span>
+                                        <SimpleCodeBoard code={code.Endpoints.FailedCode} language='http' />
+                                    </div>
+                                </div>
+                            </div>
+                            <CodeBoard modes={code.Endpoints.transaction.states} />
+                        </div>
+                    </div>
                 </div>
             </Route>
         </div>
@@ -527,30 +622,30 @@ export function CodeBlock({ value }) {
 
 export function DevOverview() {
     return (
-        <div className="py-8 grid grid-cols-2 gap-x-5">
+        <div className="py-4 grid grid-cols-2 gap-x-5 md:w-6/12">
             <Link
-                className="text-msm text-center bg-qosgray shadow block h-24 w-full mx-auto mt-4 rounded-md"
+                className="text-msm text-center pricingCard shadow block h-24 w-full mx-auto mt-4 rounded-md"
                 to="/developers/api"
             >
                 <div className="h-8 w-8"></div>
                 API documention
             </Link>
             <Link
-                className="text-msm text-center bg-qosgray shadow block h-24 w-full mx-auto mt-4 rounded-md"
+                className="text-msm text-center pricingCard shadow block h-24 w-full mx-auto mt-4 rounded-md"
                 to="/developers/plugins-and-libraries"
             >
                 <div className="h-8 w-8"></div>
                 plugins and libraries
             </Link>
             <Link
-                className="text-msm text-center bg-qosgray shadow block h-24 w-full mx-auto mt-4 rounded-md"
+                className="text-msm text-center pricingCard shadow block h-24 w-full mx-auto mt-4 rounded-md"
                 to="/developers/"
             >
                 <div className="h-8 w-8"></div>
                 USSD payment
             </Link>
             <Link
-                className="text-msm text-center bg-qosgray shadow block h-24 w-full mx-auto mt-4 rounded-md"
+                className="text-msm text-center pricingCard shadow block h-24 w-full mx-auto mt-4 rounded-md"
                 to="/developers/"
             >
                 <div className="h-8 w-8"></div>

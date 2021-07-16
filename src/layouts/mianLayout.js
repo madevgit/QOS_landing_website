@@ -1,6 +1,6 @@
 export default function MainLayout( {children} ){
     return(
-        <main>
+        <main className="min-h-screen relative">
             {children}
         </main>
     )

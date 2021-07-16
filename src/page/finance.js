@@ -14,7 +14,7 @@ export default function FinancePage() {
             <p class="mt-8 md:w-10/12 mx-auto text-justify">We provide a simple, flexible, secure solution that is scalable to meet the MFI future needs. The Micro Finance solution fine-tunes and adjusts existing processes and workflows as required. It is built to adapt to the changing business needs and can incorporate new products and business models easily.</p>
             <p class="mt-4 md:w-10/12 mx-auto text-justify">Customers can have access to micro finance through Unstructured Supplementary Service Data (USSD), web interface and mobile app. This is designed to cover customers in difficult to reach areas that do might not have access to the internet and smart phones..</p>
 
-            <div className="keysWrapper md:grid grid-flow-col gap-x-10 mt-8 md:mt-10">
+            <div className="keysWrapper pricingCard px-4 pb-8 md:grid grid-flow-col gap-x-10 mt-8 md:mt-10">
                 <div id="Features">
                     <h3 className="my-8 font-medium">Key Feature</h3>
                     <div class="grid grid-flow-row gap-y-6">
