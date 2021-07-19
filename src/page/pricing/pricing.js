@@ -24,7 +24,7 @@ export default function PricingPage() {
                         <img class="inline-block h-8 w-8" name="checked" src={check} alt="pricingOption" />
                         <p class="w-9/12 inline-block">Installation charge depend to your need</p>
                     </div>
-                    <Link to="/contact">
+                    <Link to="/contact-us">
                         <button class="btn btn-active bg-gradient-to-bl from-qosorange to-qosblue mt-8 mx-auto block">
                             Contact sales
                         </button>
@@ -66,7 +66,7 @@ export default function PricingPage() {
                         <p className="inline-block">Support by</p>
                         <img src={moov} className="rounded-sm bg-qosdark h-9 inline-block ml-4" alt="mootPartners" />
                         <img src={mtn} alt="mootPartners" className="inline-block ml-4 w-16" />
-                        <Link to="contact"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
+                        <Link to="contact-us"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
                     </div>
                 </div>
                 <div className={`min-w-full md:w-5/12 md:min-w-min rounded-r-lg rounded-b-lg md:rounded-lg bg-qosgray bg-opacity-70 transform  ${isAboutAPI ? '-translate-x-full md:translate-x-0 scale-x-100 rounded-lg' : 'translate-x-0 md:scale-x-100 scale-x-0'} origin-left duration-500 ease  p-4 mb-4`}>
@@ -81,7 +81,7 @@ export default function PricingPage() {
                             <p className="inline-block">Payment by</p>
                             <img src={moov} class="bg-qosdark rounded-sm h-9 inline-block ml-4" alt="mootPartners" />
                             <img src={mtn} alt="mootPartners" className="inline-block ml-4 w-16" />
-                            <Link to="contact"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
+                            <Link to="contact-us"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
                         </div>
                     </div>
                 </div>
