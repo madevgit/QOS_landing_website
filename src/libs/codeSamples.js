@@ -17,9 +17,7 @@ export const code = {
                  $message['comment']=&amp;amp;amp;amp;amp;quot;null&amp;amp;amp;amp;amp;quot;;
                    $context  = &amp;amp;amp;amp;amp;quot;http://example_url_or_ip&amp;amp;amp;amp;amp;quot;;  
                    $username = &amp;amp;amp;amp;amp;quot;user&amp;amp;amp;amp;amp;quot;;  
-                   $password = &amp;amp;amp;amp;amp;quot;password&amp;amp;amp;amp;amp;quot;;  
-             
-           //////////////////////////////////////////////////////////
+                   $password = &amp;amp;amp;amp;amp;quot;password&amp;amp;amp;amp;amp;quot;;
                    function callAPI($method, $url, $data){
               $curl = curl_init();
               switch ($method){

@@ -1124,7 +1124,7 @@
     @apply bg-transparent border-qosdark bg-opacity-20 text-qosblue text-opacity-30;
   }
   p {
-    @apply text-mlg lg:text-dmd;
+    @apply text-mlg lg:text-dmd text-qosdark text-opacity-70 font-medium;
   }
   .pricingCard {
     background: linear-gradient(
@@ -1181,16 +1181,16 @@
     @apply text-mmd font-bold;
   }
   h1 {
-    @apply text-mH1 font-bold lg:text-dH1 text-opacity-10;
+    @apply text-mH1 font-bold lg:text-dH1 text-qosdark text-opacity-80;
   }
   h2 {
-    @apply text-mH2 lg:text-dH2 text-opacity-10;
+    @apply text-mH2 lg:text-dH2 text-qosdark font-bold text-opacity-80;
   }
   h3 {
-    @apply text-mH3 lg:text-dH3 text-opacity-10;
+    @apply text-mH3 lg:text-dH3 text-qosdark font-bold text-opacity-80;
   }
   h4 {
-    @apply text-mST lg:text-dST font-bold text-opacity-70;
+    @apply text-mST lg:text-dST font-bold text-qosdark text-opacity-80;
   }
 
   #Landing {
@@ -1204,8 +1204,11 @@
         rgba(79, 83, 252, 0.5) 17.84%,
         rgba(252, 162, 79, 0.125) 101.69%
       );
+      
   }
-
+  #webDev{
+    clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+  }
   .hideScroll::-webkit-scrollbar {
     display: none;
   }
