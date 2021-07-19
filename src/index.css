@@ -4,7 +4,6 @@
 
 @layer base {
   @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
   :root,
   body {
     font-size: 16px;
@@ -1194,19 +1193,9 @@
   }
 
   #Landing {
-    background: linear-gradient(
-        209.03deg,
-        rgba(79, 83, 252, 0.48) 17.84%,
-        rgba(252, 162, 79, 0.424) 101.69%
-      ),
-      linear-gradient(
-        209.03deg,
-        rgba(79, 83, 252, 0.5) 17.84%,
-        rgba(252, 162, 79, 0.125) 101.69%
-      );
-      
+
   }
-  #webDev{
+  #webDev {
     clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
   }
   .hideScroll::-webkit-scrollbar {
@@ -1225,12 +1214,15 @@
   .stepStatus.passed {
     @apply bg-gradient-to-bl from-qosgreen to-qosgreen text-qosgreen h-2 text-opacity-0;
   }
-  .docslinks{
-    @apply mx-4
+  .docslinks ~ li {
+    @apply block p-2 bg-qosred;
+  }
+  .docslinks {
+    @apply mx-4 block max-w-max;
   }
   .docslinks::after {
     content: "";
-    @apply h-0.5 w-full block transform duration-500 scale-0 transition-all absolute bg-qosblue rounded-full;
+    @apply h-0.5 w-full max-w-min block transform duration-500 scale-0 transition-all absolute bg-qosblue rounded-full;
   }
   .docslinks.text-qosblue::after {
     @apply scale-100 origin-center;
@@ -1244,7 +1236,7 @@
     @apply overflow-auto;
   }
   table {
-    @apply mx-auto
+    @apply mx-auto;
   }
   table.docs td,
   table.docs th {
@@ -1253,5 +1245,23 @@
   code[class*="language-code"] {
     @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
     shadow: none;
+  }
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: rgba(19, 105, 250, 0.4);
+  }
+  30% {
+    background: rgba(19, 105, 250, 0.4);
+  }
+  60% {
+    background: rgba(19, 105, 250, 0.4);
+  }
+  90% {
+    background: rgba(19, 105, 250, 0.4);
+  }
+  100% {
+    background: rgba(19, 105, 250, 0.4);
   }
 }

@@ -7,21 +7,18 @@ const { check } = media.Icons[2]
 const CountryAddress = [
     {
         name: 'Benin',
-        mail: 'mail@qosic.com',
-        Tel: '+229 222-222 22',
-        Location: `LOT: 902-Maison Houedanou Leonard, Quartier Sikecodji,Cotonou`
+        mail: 'info@qosic.com',
+        Location: `LOT: 902 – Maison Houedanou Leonard, Quartier Sikecodji, Cotonou        `
     },
     {
         name: 'Nigeria',
-        mail: 'mail@qosic.com',
-        Tel: '+234 222-222 22',
-        Location: `Lekki Gardens, Hi Tech Road, Ajah Lagos`
+        mail: 'info@qosic.com',
+        Location: `4th floor, Polystar Building, Second Roundabout, Lekki, Lagos`
     },
     {
         name: 'Togo',
-        mail: 'mail@qosic.com',
-        Tel: '+228 222-222 22',
-        Location: `Lome-Bê Ahligo, Rue KONDA, Maison AGOSSOU Amouzouvi`
+        mail: 'info@qosic.com',
+        Location: `BE Ahligo, Rue KONDA, Maison AGOSSOU Amouzouvi, Lome`
     }
 ]
 
@@ -51,10 +48,6 @@ export default function Address({ className, textColor = false }) {
             </div>
             <div className="mt-4 grid grid-flow-row gap-y-4">
                 <div>
-                    <p className={`${textColor}`}>
-                        <span className="fi text-mlg fi-rr-envelope inline-block"></span>
-                        <span className="ml-4 text-msm">{CountryAddress[CountryNumber].Tel} </span>
-                    </p>
                     <p className={`${textColor}`}>
                         <span className="fi text-mlg fi-rr-envelope inline-block"></span>
                         <span className="ml-4 text-msm">{CountryAddress[CountryNumber].mail} </span>

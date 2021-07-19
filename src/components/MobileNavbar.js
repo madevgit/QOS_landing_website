@@ -41,7 +41,7 @@ export function MobileNavbar() {
                 </div>
                 <div>
                     <p className="text-mmd font-bold mb-2 text-opacity-50 text-qosdark">Developers</p>
-                    <LinkIcon name="Documention" icon={offline} link="/docs" />
+                    <LinkIcon name="Documention" target="_blank" icon={offline} link="/docs" />
                 </div>
                 <div className="col-span-2">
                     <Link to="/register" className="p-2 block rounded-full px-3 bg-opacity-90 btn-primary btn-sm max-w-max mx-auto m-2" >

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/themes/prism.css'
 import './index.css'
 import App from './App'
 

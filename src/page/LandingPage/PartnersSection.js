@@ -2,7 +2,7 @@ import Wrapper from '../../components/sectionWrapper'
 import { media } from '../../libs/media'
 
 export default function Partners() {
-    return (<Wrapper style={{ clipPath: 'url(#myCurve)' }} className="py-8 z-10 relative mx-auto -mt-4 bg-qosgray md:py-20 md:-mt-8">
+    return (<Wrapper style={{ clipPath: 'url(#myCurve)' }}   className="py-10 z-10 -mt-8 overflow-hidden relative h-48 md:h-60 mx-auto bg-qosgray md:py-20 md:-mt-20 ">
         <svg width="0" height="0" className="fixed">
             <defs>
                 <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
@@ -18,8 +18,8 @@ export default function Partners() {
                 </clipPath>
             </defs>
         </svg>
-        <div className="mx-auto overflow-auto hideScroll flex">
-            {media.Logos.customers.map((Partner, index) => <img key={`partners-${index}`} className="inline-block h-12 w-20 rounded mx-4 " src={Partner} alt="hello part" />)}
+        <div className="mx-auto hideScroll grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 animate-partnersAnimation transform overflow-hidden">
+            {media.Logos.customers.map((Partner, index) => <img key={`partners-${index}`} className="block md:h-14 h-14 w-18 md:w-24 rounded mx-auto " src={Partner} alt="hello part" />)}
         </div>
     </Wrapper>)
 }

@@ -15,11 +15,15 @@ import OnlinePaymentPage from './page/onlinePayment'
 import ShareLinkPage from './page/sharableLink'
 import DevelopersPage from './page/developer/developers'
 import Prism from 'prismjs'
+import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-python'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-jq'
 import 'prismjs/components/prism-http'
 import 'prismjs/components/prism-uri'
+import 'prismjs/components/prism-php'
+import 'prismjs/components/prism-rest'
+
 
 const MainPaths = [
   '/',
@@ -80,7 +84,7 @@ export default function App() {
         <Route exact path={`${path}shareLink-payment`}>
           <ShareLinkPage />
         </Route>
-        <Route exact path={`${path}docs`}>
+        <Route path={`${path}docs`}>
           <DevelopersPage />
         </Route>
       </MainLayout>

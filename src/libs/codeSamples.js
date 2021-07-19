@@ -1,4 +1,4 @@
-export const code = {
+export const Code = {
     Libs: {
         php: [
             {
@@ -557,15 +557,15 @@ export const code = {
             </html>`
         }]
     },
-    Endpoints:{
-        SuccessCode:'HTTP Status Code: 202',
-        FailedCode:'HTTP Status Code: 404',
-        payment:{
-            states:[
+    Endpoints: {
+        SuccessCode: 'HTTP Status Code: 202',
+        FailedCode: 'HTTP Status Code: 404',
+        payment: {
+            states: [
                 {
-                    name:'Request',
-                    language:'json',
-                    code:`Content-Type: application/json[Basic Authentication headers]…
+                    name: 'Request',
+                    language: 'json',
+                    code: `Content-Type: application/json[Basic Authentication headers]…
                     {
                     “msisdn”: “22967307747”,
                     “amount”: “2000”,
@@ -576,9 +576,9 @@ export const code = {
                     }`
                 },
                 {
-                    name:'Success',
-                    language:'json',
-                    code:`{
+                    name: 'Success',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “01”,
                         “responsemsg”: “PENDING”,
                         “transref”: “12345”,
@@ -586,9 +586,9 @@ export const code = {
                         }`
                 },
                 {
-                    name:'Error',
-                    language:'json',
-                    code:`{
+                    name: 'Error',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “-2”,
                         “responsemsg”: “Invalid Client Id”,
                         “transref”: “12345”,
@@ -596,23 +596,23 @@ export const code = {
                         }`
                 }
             ],
-            uri:`POST {baseUrl}/QosicBridge/user/requestpayment`,
+            uri: `POST {baseUrl}/QosicBridge/user/requestpayment`,
         },
-        transaction:{
-            states:[
+        transaction: {
+            states: [
                 {
-                    name:'Request',
-                    language:'json',
-                    code:`Content-Type: application/json[Basic Authentication headers]…
+                    name: 'Request',
+                    language: 'json',
+                    code: `Content-Type: application/json[Basic Authentication headers]…
                     {
                     “transref” :”12345″,
                     “clientid”: “QOS3P001”
                     }`
                 },
                 {
-                    name:'Success',
-                    language:'json',
-                    code:`{
+                    name: 'Success',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “00”,
                         “responsemsg”: “SUCCESSFUL”,
                         “transref”: “12345”,
@@ -620,9 +620,9 @@ export const code = {
                         }`
                 },
                 {
-                    name:'Error',
-                    language:'json',
-                    code:`{
+                    name: 'Error',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “-2”,
                         “responsemsg”: “INVALID CLIENT ID”,
                         “transref”: “12345”,
@@ -631,23 +631,23 @@ export const code = {
                 }
 
             ],
-            uri:'POST {context}/QosicBridge/user/gettransactionstatus'
+            uri: 'POST {context}/QosicBridge/user/gettransactionstatus'
         },
-        refund:{
-            states:[
+        refund: {
+            states: [
                 {
-                    name:'Request',
-                    language:'json',
-                    code:`Content-Type: application/json[Basic Authentication headers]…
+                    name: 'Request',
+                    language: 'json',
+                    code: `Content-Type: application/json[Basic Authentication headers]…
                     {
                     “transref” :”56789″,
                     “clientid”: “QOS3P001”
                     }`
                 },
                 {
-                    name:'Success',
-                    language:'json',
-                    code:`{
+                    name: 'Success',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “00”,
                         “responsemsg”: “OPERATION SUCCESSFUL”,
                         “transref”: “56789”,
@@ -655,9 +655,9 @@ export const code = {
                         }`
                 },
                 {
-                    name:'Error',
-                    language:'json',
-                    code:`{
+                    name: 'Error',
+                    language: 'json',
+                    code: `{
                         “responsecode”: “-2”,
                         “responsemsg”: “Invalid Client Id”,
                         “transref”: “56789”,
@@ -666,7 +666,32 @@ export const code = {
                 }
 
             ],
-            uri:'POST {context}/QosicBridge/user/refund '
+            uri: 'POST {context}/QosicBridge/user/refund '
         }
     }
+}
+
+Code.LibsOverview = function () {
+    return [
+        {
+            name: 'php',
+            language: this.Libs.php[0].language,
+            code: this.Libs.php[0].code
+        },
+        {
+            name: "Javascript",
+            language: this.Libs.javascript[0].language,
+            code: this.Libs.javascript[0].code
+        },
+        {
+            name: "Django",
+            language: this.Libs.django[0].language,
+            code: this.Libs.django[0].code
+        },
+        {
+            name: "Laravel",
+            language: this.Libs.laravel[0].language,
+            code: this.Libs.laravel[0].code
+        }
+    ]
 }

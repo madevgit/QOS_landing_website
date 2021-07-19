@@ -1,11 +1,21 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useRouteMatch } from 'react-router-dom'
 import Address from './address'
 import Wrapper from './sectionWrapper'
 import { media } from '../libs/media'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
+    const {pathname}= useLocation()
+    const [hide,setHide]=useState(false)
+    useEffect(()=>{
+        if(/\/docs/.test(pathname)){
+            setHide(true)
+        }else{
+            setHide(false)
+        }
+    },[pathname])
     return (
-        <footer className="text-msm md:text-dsm">
+        <footer className={`text-msm md:text-dsm ${hide&&'hidden'}`}>
             <Wrapper childrenClassName="grid md:gap-x-8 lg:gap-x-12 grid-flow-rows md:grid-flow-col gap-y-6" className="bg-qosdark bg-opacity-90 py-6 text-qosgray text-opacity-80 mx-auto">
                 <div className="h-8 w-16 md:w-32 md:h-16 lg:w-40 lg:h-20 md:self-center">
                     <img src={media.Logos.qos.qosLogoWhite} alt="QOS_logo" className="h-full w-full" />

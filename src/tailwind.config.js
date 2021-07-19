@@ -3,21 +3,6 @@ module.exports = {
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      keyframes: {
-        'partnersAnimation': {
-          '0%,100%': {
-         transform:'translateY(0)'
-          },
-          '50%':{
-             transform:'translateY(-20em)'
-          }
-        }
-      },
-      animation: {
-        'partnersAnimation': 'partnersAnimation 50s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite forwards'
-      }
-    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -27,9 +12,9 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      qosdark: '#04052E',
-      qosorange: '#FF7D00',
-      qosblue: '#0D00A4',
+      qosdark: '#0C0E45',
+      qosorange: '#FCA24F',
+      qosblue: '#4F53FC',
       qosred: '#FC4F53',
       qosgreen: '#53FC4F',
       qosgray: '#FFFFFF',

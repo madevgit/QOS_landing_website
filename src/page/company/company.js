@@ -95,7 +95,7 @@ export default function EntreprisePage() {
                 {media.Logos.customers.map((Partner, index) => <img key={`customer-${index}`} className="h-12 w-20 block mx-auto rounded md:h-14 lg:h-16 lg:w-24" src={Partner} alt="hello part" />)}
             </div>
             <h3 className="my-8 mt-20 text-center">Will you work with  us ?</h3>
-            <Link to="/contact-us"><button className="btn btn-primary bg-opacity-70 rounded-full btn-md my-8 block mx-auto">Contact Us here <span class="fi fi-rr-arrow-small-right "></span></button></Link>
+            <Link to="/contact-us"><button className="btn btn-primary bg-qosorange rounded-full btn-md my-8 block mx-auto">Contact Us here <span class="fi fi-rr-arrow-small-right "></span></button></Link>
 
         </Wrapper>
     )

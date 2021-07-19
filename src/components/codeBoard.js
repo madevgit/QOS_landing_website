@@ -9,7 +9,7 @@ export default function CodeBoard({ modes = false }) {
     }, [currentMode])
 
     return (
-        <div className="relative text-small bg-qosdark bg-opacity-80 md:text-msm w-12/12 md:w-12/12 mx-auto rounded-lg my-4 p-2">
+        <div className="relative text-small bg-qosdark bg-opacity-80 md:text-msm max-w-sm  mx-auto rounded-xl my-4 p-2">
             <header className="md:h-8 h-6 py-2 flex items-center justify-between">
                 <div className="w-3/12 flex">
                     <span className="inline-block p-0.5 md:h-3  md:w-3 h-2 w-2 bg-qosred rounded-full m-1"></span>

@@ -8,11 +8,11 @@ const { check } = media.Icons[2]
 export default function PricingPage() {
     const [isAboutAPI, setIsAboutAPI] = useState(false)
     return (
-        <Wrapper className="mt-24" style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "100% 0.5%" }}>
+        <Wrapper className="mt-24" style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "100% 0.4%" }}>
             <h2 class="text-qosdark text-opacity-80 mt-4">Simple, transparent pricing</h2>
             <h4 class="mt-4 text-qosdark text-opacity-80 font-normal md:mt-8">Simple choose your plan and apply</h4>
-            <div className="mt-10 md:mt-12 md:grid grid-flow-col gap-x-10 md:w-10/12 mx-auto">
-                <div class="pricingCard max-w-xs px-4 py-4 w-11/12 mx-auto border border-opacity-75 border-qosgray">
+            <div className="mt-10 md:mt-12 md:grid grid-flow-col gap-x-5 lg:gap-x-10 md:w-10/12 mx-auto">
+                <div class="pricingCard max-w-xs px-4 py-4 mx-auto border border-opacity-75 border-qosgray">
                     <h1 className="text-center md:text-dH2 my-4">USSD</h1>
                     <h1 class="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">1,7%</h1>
                     <p className="w-11/12 mx-auto text-center">for every subsequent successful transaction</p>
@@ -25,12 +25,12 @@ export default function PricingPage() {
                         <p class="w-9/12 inline-block">Installation charge depend to your need</p>
                     </div>
                     <Link to="/contact-us">
-                        <button class="btn btn-active bg-gradient-to-bl from-qosorange to-qosblue mt-8 mx-auto block">
+                        <button class="btn btn-active bg-qosorange rounded-md mt-8 mx-auto block">
                             Contact sales
                         </button>
                     </Link>
                 </div>
-                <div class="pricingCard max-w-xs px-4 mt-8 md:mt-0 py-4 w-11/12 mx-auto border border-opacity-75 border-qosgray">
+                <div class="pricingCard max-w-xs px-4 mt-8 md:mt-0 py-4 mx-auto border border-opacity-75 border-qosgray">
                     <h1 className="text-center md:text-dH2 my-4">API</h1>
                     <h1 class="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">1,7%</h1>
                     <p className="w-11/12 mx-auto text-center">for every subsequent successful transaction</p>
@@ -43,7 +43,7 @@ export default function PricingPage() {
                         <p class="w-9/12 inline-block">No hidden fee or charges</p>
                     </div>
                     <Link to="/register">
-                        <button class="btn btn-active bg-gradient-to-bl from-qosorange to-qosblue mt-8 mx-auto block">
+                        <button class="btn btn-active bg-qosorange rounded-md mt-8 mx-auto block">
                             Apply now
                         </button>
                     </Link>
@@ -66,7 +66,11 @@ export default function PricingPage() {
                         <p className="inline-block">Support by</p>
                         <img src={moov} className="rounded-sm bg-qosdark h-9 inline-block ml-4" alt="mootPartners" />
                         <img src={mtn} alt="mootPartners" className="inline-block ml-4 w-16" />
-                        <Link to="contact-us"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
+                        <Link to="/contact-us">
+                            <button class="btn btn-active bg-qosorange rounded-md mt-8 mx-auto block">
+                                Contact sales
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={`min-w-full md:w-5/12 md:min-w-min rounded-r-lg rounded-b-lg md:rounded-lg bg-qosgray bg-opacity-70 transform  ${isAboutAPI ? '-translate-x-full md:translate-x-0 scale-x-100 rounded-lg' : 'translate-x-0 md:scale-x-100 scale-x-0'} origin-left duration-500 ease  p-4 mb-4`}>
@@ -81,7 +85,11 @@ export default function PricingPage() {
                             <p className="inline-block">Payment by</p>
                             <img src={moov} class="bg-qosdark rounded-sm h-9 inline-block ml-4" alt="mootPartners" />
                             <img src={mtn} alt="mootPartners" className="inline-block ml-4 w-16" />
-                            <Link to="contact-us"><button className="btn rounded btn-primary text-msm block mt-8 mx-auto">Contact Sales</button></Link>
+                            <Link to="/contact-us">
+                                <button class="btn btn-active bg-qosorange rounded-md mt-8 mx-auto block">
+                                    Contact sales
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

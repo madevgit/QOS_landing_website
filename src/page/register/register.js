@@ -65,7 +65,7 @@ export default function RegisterPage() {
     return (
         <Wrapper style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "100% 1%" }} >
             <div class="block w-12/12 max-w-lg px-2 pricingCard py-4 mx-auto my-24 rounded-xl">
-                <h3 class="text-center">Create  your <span className="text-qosblue"> QOS </span> account</h3>
+                <h3 class="text-center">Create  your <span className="text-qosorange text-opacity-90"> QOS </span> account</h3>
                 <div class="my-4 w-5/12 md:w-3/12 mx-auto h-8 flex items-center justify-between">
                     <button id="0" class="stepStatus active" >1</button>
                     <button id="1" class="stepStatus" >2</button>

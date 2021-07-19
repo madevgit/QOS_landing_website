@@ -3,20 +3,17 @@ import Wrapper from '../../components/sectionWrapper'
 import Address from '../../components/address'
 export default function ContactPage() {
     const [OtherReason, setOtherReason] = useState(true)
-    return (<Wrapper style={{ background: "linear-gradient(209.03deg,rgba(79, 83, 252, 0.48) 107.84%,rgba(252, 162, 79, 0.424) 101.69%),linear-gradient(209.03deg,rgba(79, 83, 252, 0.48) 17.84%,rgba(252, 162, 79, 0.424) 101.69%)" }} childrenClassName="transform md:scale-90" className="py-24 md:py-4">
+    return (<Wrapper style={{ background: "linear-gradient(5deg,rgba(19,105,250, .7),rgba(19,105,250, .8),rgba(19,105,250, 1))" }} childrenClassName="transform md:scale-90" className="py-24 md:py-4">
         <h2 className="font-medium text-center text-qosgray md:mt-16 md:w-10/12 mx-auto">Contact Us</h2>
         <p class="mt-4 md:w-7/12 mx-auto text-center text-qosgray text-mlg md:text-dlg font-medium">
             Share with us your problem, idea
         </p>
-        <section className="my-10 md: md:flex">
-            <div className=" md:w-60 mx-auto shadow-lg bg-qosgray bg-opacity-80     p-2 transform md:scale-105 mt-2 px-4  mb-4 rounded-md md:rounded-xl z-10 ralative">
+        <section className="my-10 md:flex">
+            <div className=" md:w-60 mx-auto bg-qosgray bg-opacity-90 p-2 mt-2 px-4  mb-4 rounded-md md:rounded-l-3xl md:rounded-none z-10 ralative">
                 <h4 className="font-medium opacity-90 text-dlg text-center my-4">Contact Information</h4>
                 <Address className="mx-auto h-40" />
-                <div className="hidden md:block h-48 w-full">
-
-                </div>
             </div>
-            <form className="mx-auto max-w-sm md:max-w-3xl md:-ml-8 -mt-2 bg-qosgray bg-opacity-80 md:pl-8 rounded-lg md:flex flex-wrap px-2 py-4 z-0 relative">
+            <form className="mx-auto max-w-sm md:max-w-3xl md:-ml-0 -mt-2 bg-qosgray bg-opacity-90 md:pl-8 rounded-lg md:flex flex-wrap px-2 py-4 z-0 relative">
                 <div>
 
                 </div>
