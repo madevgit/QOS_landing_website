@@ -77,7 +77,7 @@ export default function DigitalFinancePage() {
                 <h2 class="text-center my-4 md:my-8">
                     Ready to join us today ?
                 </h2>
-                <button class="btn btn-primary rounded-full shadow-lg px-4 bg-opacity-80 mx-auto block"> Contact Us </button>
+                <button class="btn btn-primary bg-qosorange rounded-full shadow-lg px-4 bg-opacity-80 mx-auto block"> Contact Us </button>
             </div>
         </Wrapper>
     )

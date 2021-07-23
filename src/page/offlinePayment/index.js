@@ -18,7 +18,7 @@ export default function OfflinePaymentPage(){
       </div>
     </div>
     <div className="mt-6 max-w-max mx-auto md:mx-0 md:mt-10">
-      <Link to="/register" className="p-2 inline-block px-2.5 md:px-3 rounded-full bg-opacity-90 shadow-lg bg-qosorange text-qosgray text-opacity-70 font-medium btn-sm max-w-max mx-auto">
+      <Link to="/register" className="p-2 inline-block px-2.5 md:px-3 rounded-md bg-opacity-90 shadow-lg bg-qosorange text-qosgray text-opacity-70 font-medium btn-sm max-w-max mx-auto">
         Create Account
       </Link>
       <Link to="/devolopers/api" className="rounded-full ml-1.5 md:ml-4 bg-qosdark bg-opacity-10 inline-block p-2 backdrop-blur-3xl">
@@ -39,7 +39,7 @@ export default function OfflinePaymentPage(){
       <p className="mt-4 md:w-6/12">
         We design and build your USSD menu according to your need and your
         customers experience.They accomplish journey on few  simple steps.
-        <Link to="/contact-us" className="p-2 mb-4 md:mb-0 block px-2.5 md:px-3 mt-4 rounded-full bg-opacity-90 shadow-lg bg-gradient-to-bl from-qosorange to-qosblue text-qosgray text-opacity-70 font-medium btn-sm max-w-max mx-auto">
+        <Link to="/contact-us" className="p-2 mb-4 md:mb-0 block px-2.5 md:px-3 mt-4 rounded-md bg-opacity-90 shadow-lg bg-qosorange text-qosgray text-opacity-70 font-medium btn-sm max-w-max mx-auto">
           Contact Sales
         </Link>
       </p>
