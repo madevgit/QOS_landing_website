@@ -2,7 +2,7 @@ import Wrapper from '../../components/sectionWrapper'
 import { media } from '../../libs/media'
 import { Link } from 'react-router-dom'
 
-const {lowFees,security,easyHandling} = media.Icons[1]
+const { lowFees, security, easyHandling } = media.Icons[1]
 
 export default function OnlinePaymentPage() {
     return (<Wrapper childrenClassName="mt-24 md:mt-32">
@@ -36,7 +36,8 @@ export default function OnlinePaymentPage() {
                     <h4 className="md:text-center"> Total Security </h4>
                 </div>
                 <p className="mt-2">
-                    Ours APIS  are build to be supported by many techonlogies such as PHP, Laravel, Django & Ajax, javascript and wordpress woocommerce.
+                    QOS api is designed on the "security first" principle.
+                    It protects you from all forms of scams. Your transactions and personal data as well as those of your customers are protected
                 </p>
             </div>
             <div className="border-l-2 border-t-2 rounded-3xl pl-2 border-dashed border-qosdark border-opacity-10">
@@ -45,7 +46,7 @@ export default function OnlinePaymentPage() {
                     <h4 className="md:text-center"> Easy to handle </h4>
                 </div>
                 <p className="mt-2">
-                    Ours APIS  are build to be supported by many techonlogies such as PHP, Laravel, Django & Ajax, javascript and wordpress woocommerce.
+                Supporting QOS products is a very simple exercise for both end users and developers. Well-detailed documentation and an array of integration tools.
                 </p>
             </div>
             <div className="border-l-2 border-t-2 rounded-3xl pl-2 border-dashed border-qosdark border-opacity-10">
@@ -54,7 +55,7 @@ export default function OnlinePaymentPage() {
                     <h4 className="md:text-center"> Low fees </h4>
                 </div>
                 <p className="mt-2">
-                    Ours APIS  are build to be supported by many techonlogies such as PHP, Laravel, Django & Ajax, javascript and wordpress woocommerce.
+                QOS wants to be a loyal ally and supporter of companies and start-ups. QOS does not apply any fees apart from 1.7% tax on each successful transaction.
                 </p>
             </div>
         </div>
