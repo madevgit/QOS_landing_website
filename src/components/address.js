@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
 import { media } from "../libs/media";
-import { useLangContext } from "./translateContext";
 const { Benin, Nigeria, Togo } = media.Flags;
 const { check } = media.Icons[2];
 
@@ -25,14 +23,6 @@ const CountryAddress = [
 
 export default function Address({ className, textColor = false }) {
   const [CountryNumber, setNumber] = useState(0);
-  const { Lang, setLang } = useLangContext();
-  useEffect(() => {
-    // if (CountryNumber === 1) {
-    //   setLang("en");
-    // } else {
-    //   setLang("fr");
-    // }
-  }, [CountryNumber,setLang]);
   return (
     <div className={className}>
       <div className="flex justify-around items-center">

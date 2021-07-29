@@ -5,7 +5,7 @@ import { useLangContext } from "../../components/translateContext"
 import Messages from "./translations/index.json"
 import buttonText from '../../translations/button.json'
 
-const { lowFees, security, easyHandling } = media.Icons[1]
+const { lowFees} = media.Icons[1]
 
 export default function ShareLinkPage() {
     const { Lang } = useLangContext()

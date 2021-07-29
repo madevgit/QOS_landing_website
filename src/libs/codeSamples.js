@@ -1,10 +1,10 @@
 export const Code = {
-    Libs: {
-        php: [
-            {
-                name: 'Sendrequest',
-                language: 'php',
-                code: `
+  Libs: {
+    php: [
+      {
+        name: "Sendrequest",
+        language: "php",
+        code: `
                 session_start();
             header(&amp;amp;amp;amp;amp;quot;Access-Control-Allow-Origin: *&amp;amp;amp;amp;amp;quot;);
                    $message=array();
@@ -62,12 +62,11 @@ export const Code = {
             
              $_SESSION['transref']=$response['transref'];
              $_SESSION['clientid']=$message['clientid'];`,
-
-            },
-            {
-                name: 'getResponse',
-                language: 'php',
-                code: `<? session_start();
+      },
+      {
+        name: "getResponse",
+        language: "php",
+        code: `<? session_start();
             header(&amp;amp;amp;amp;amp;quot;Access-Control-Allow-Origin: *&amp;amp;amp;amp;amp;quot;);
                    $message=array();
                    $message['transref']=$_SESSION['transref'];
@@ -125,14 +124,14 @@ export const Code = {
                    echo &amp;amp;amp;amp;amp;quot;success&amp;amp;amp;amp;amp;quot;;}
            else {
                    echo &amp;amp;amp;amp;amp;quot;Failed &amp;amp;amp;amp;amp;quot;;
-           }`
-            }
-        ],
-        django: [
-            {
-                name: 'request',
-                language: 'python',
-                code: `def api(request):
+           }`,
+      },
+    ],
+    django: [
+      {
+        name: "request",
+        language: "python",
+        code: `def api(request):
                 context = {  
                     'status':&amp;quot;info&amp;quot;,
                     'text':&amp;quot;Not Set&amp;quot;,
@@ -244,11 +243,11 @@ export const Code = {
                                 'comment':'-',
                             }
                             return render(request, 'index.html',context)`,
-            },
-            {
-                name: 'response',
-                language: 'jq',
-                code: `//add starting script tag here
+      },
+      {
+        name: "response",
+        language: "jq",
+        code: `//add starting script tag here
                 var xhr = new XMLHttpRequest();
                 xhr.onload = function() {
                   var responseText = xhr.responseText;
@@ -347,14 +346,14 @@ export const Code = {
                       display = document.querySelector('#time');
                   startTimer(fiveMinutes, display);
               };
-            //add closing script tag here`
-            }
-        ],
-        laravel: [
-            {
-                name: 'Laravel library',
-                language: 'php',
-                code: `//web.php
+            //add closing script tag here`,
+      },
+    ],
+    laravel: [
+      {
+        name: "Laravel library",
+        language: "php",
+        code: `//web.php
             // Route::get('/',[
             //     'uses'=&amp;gt;'ApiController@index',
             //     'as'=&amp;gt;'index'
@@ -366,10 +365,10 @@ export const Code = {
             // ]);
             //web.php
              
-            namespace App\Http\Controllers;
+            namespace App\\Http\\Controllers;
              
-            use Illuminate\Http\Request;
-            use Goutte\Clients;
+            use Illuminate\\Http\\Request;
+            use Goutte\\Clients;
             class ApiController extends Controller
             {
                 public function index(Request $request)
@@ -395,7 +394,7 @@ export const Code = {
                         &amp;quot;clientid&amp;quot;=&amp;gt; $clientid,
                     ); 
                      
-                    $client = new \GuzzleHttp\Client(['headers' =&amp;gt; ['content-type' =&amp;gt; 'application/json']]);
+                    $client = new \\GuzzleHttp\\Client(['headers' =&amp;gt; ['content-type' =&amp;gt; 'application/json']]);
                     $response = $client-&amp;gt;request('POST', $url, [
                         'auth' =&amp;gt; [$server_user, $server_pass],
                         'json' =&amp;gt; $data,
@@ -427,7 +426,7 @@ export const Code = {
                         &amp;quot;transref&amp;quot; =&amp;gt;$transref,
                         &amp;quot;clientid&amp;quot;=&amp;gt; $clientid,
                     ); 
-                    $client = new \GuzzleHttp\Client(['headers' =&amp;gt; ['content-type' =&amp;gt; 'application/json']]);
+                    $client = new \\GuzzleHttp\\Client(['headers' =&amp;gt; ['content-type' =&amp;gt; 'application/json']]);
                     $response = $client-&amp;gt;request('POST', $url, [
                         'auth' =&amp;gt; [$server_user, $server_pass],
                         'json' =&amp;gt; $data,
@@ -447,12 +446,14 @@ export const Code = {
                      
                 }
             }
-            `
-            }],
-        javascript: [{
-            name: 'Js library',
-            language: 'html',
-            code: `<!DOCTYPE html>
+            `,
+      },
+    ],
+    javascript: [
+      {
+        name: "Js library",
+        language: "html",
+        code: `<!DOCTYPE html>
             <html>
             
             <head>
@@ -554,144 +555,152 @@ export const Code = {
             <!--<script src="index.js"></script>-->
             <script type="text/javascript" src="./momo.bundle.js"></script></body>
             
-            </html>`
-        }]
+            </html>`,
+      },
+    ],
+  },
+  Endpoints: {
+    SuccessCode: "HTTP Status Code: 202",
+    FailedCode: "HTTP Status Code: 404",
+    payment: {
+      states: [
+        {
+          name: "Request",
+          language: "json",
+          code: `Content-Type: application/json[Basic Authentication headers]…
+
+          {
+            “msisdn”: “22967307747”,
+            “amount”: “2000”,
+            “firstname”:”David”,
+            “lastname”:”Ashaolu”,
+            “transref” :”12345″,
+            “clientid”: “QOS3P001”
+          }`,
+        },
+        {
+          name: "Success",
+          language: "json",
+          code: `
+          {
+            “responsecode”: “01”,
+            “responsemsg”: “PENDING”,
+            “transref”: “12345”,
+            “comment”: null
+          }`,
+        },
+        {
+          name: "Error",
+          language: "json",
+          code: `
+          {
+            “responsecode”: “-2”,
+            “responsemsg”: “Invalid Client Id”,
+            “transref”: “12345”,
+            “comment”: null
+          }`,
+        },
+      ],
+      uri: `POST {baseUrl}/QosicBridge/user/requestpayment`,
     },
-    Endpoints: {
-        SuccessCode: 'HTTP Status Code: 202',
-        FailedCode: 'HTTP Status Code: 404',
-        payment: {
-            states: [
-                {
-                    name: 'Request',
-                    language: 'json',
-                    code: `Content-Type: application/json[Basic Authentication headers]…
-                    {
-                    “msisdn”: “22967307747”,
-                    “amount”: “2000”,
-                    “firstname”:”David”,
-                    “lastname”:”Ashaolu”,
-                    “transref” :”12345″,
-                    “clientid”: “QOS3P001”
-                    }`
-                },
-                {
-                    name: 'Success',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “01”,
-                        “responsemsg”: “PENDING”,
-                        “transref”: “12345”,
-                        “comment”: null
-                        }`
-                },
-                {
-                    name: 'Error',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “-2”,
-                        “responsemsg”: “Invalid Client Id”,
-                        “transref”: “12345”,
-                        “comment”: null
-                        }`
-                }
-            ],
-            uri: `POST {baseUrl}/QosicBridge/user/requestpayment`,
+    transaction: {
+      states: [
+        {
+          name: "Request",
+          language: "json",
+          code: `Content-Type: application/json[Basic Authentication headers]…
+          
+        {
+            “transref” :”12345″,
+            “clientid”: “QOS3P001”
+        }`,
         },
-        transaction: {
-            states: [
-                {
-                    name: 'Request',
-                    language: 'json',
-                    code: `Content-Type: application/json[Basic Authentication headers]…
-                    {
-                    “transref” :”12345″,
-                    “clientid”: “QOS3P001”
-                    }`
-                },
-                {
-                    name: 'Success',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “00”,
-                        “responsemsg”: “SUCCESSFUL”,
-                        “transref”: “12345”,
-                        “comment”: “TRANSACTION APPROVED AND PROCESSED SUCCESSFULLY”
-                        }`
-                },
-                {
-                    name: 'Error',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “-2”,
-                        “responsemsg”: “INVALID CLIENT ID”,
-                        “transref”: “12345”,
-                        “comment”: “CLIENT ID DOES NOT EXIST”
-                        }`
-                }
-
-            ],
-            uri: 'POST {context}/QosicBridge/user/gettransactionstatus'
+        {
+          name: "Success",
+          language: "json",
+          code: `
+          {
+            “responsecode”: “00”,
+            “responsemsg”: “SUCCESSFUL”,
+            “transref”: “12345”,
+            “comment”: “TRANSACTION APPROVED AND PROCESSED SUCCESSFULLY”
+          }`,
         },
-        refund: {
-            states: [
-                {
-                    name: 'Request',
-                    language: 'json',
-                    code: `Content-Type: application/json[Basic Authentication headers]…
-                    {
-                    “transref” :”56789″,
-                    “clientid”: “QOS3P001”
-                    }`
-                },
-                {
-                    name: 'Success',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “00”,
-                        “responsemsg”: “OPERATION SUCCESSFUL”,
-                        “transref”: “56789”,
-                        “comment”: null
-                        }`
-                },
-                {
-                    name: 'Error',
-                    language: 'json',
-                    code: `{
-                        “responsecode”: “-2”,
-                        “responsemsg”: “Invalid Client Id”,
-                        “transref”: “56789”,
-                        “comment”: null
-                        }`
-                }
+        {
+          name: "Error",
+          language: "json",
+          code: `
+            {
+                “responsecode”: “-2”,
+                “responsemsg”: “INVALID CLIENT ID”,
+                “transref”: “12345”,
+                “comment”: “CLIENT ID DOES NOT EXIST”
+            }`,
+        },
+      ],
+      uri: "POST {context}/QosicBridge/user/gettransactionstatus",
+    },
+    refund: {
+      states: [
+        {
+          name: "Request",
+          language: "json",
+          code: `Content-Type: application/json[Basic Authentication headers]…
 
-            ],
-            uri: 'POST {context}/QosicBridge/user/refund '
-        }
-    }
-}
+        {
+            “transref” :”56789″,
+            “clientid”: “QOS3P001”
+        }`,
+        },
+        {
+          name: "Success",
+          language: "json",
+          code: `
+          {
+            “responsecode”: “00”,
+            “responsemsg”: “OPERATION SUCCESSFUL”,
+            “transref”: “56789”,
+            “comment”: null
+          }`,
+        },
+        {
+          name: "Error",
+          language: "json",
+          code: `
+          {
+            “responsecode”: “-2”,
+            “responsemsg”: “Invalid Client Id”,
+            “transref”: “56789”,
+            “comment”: null
+          }`,
+        },
+      ],
+      uri: "POST {context}/QosicBridge/user/refund ",
+    },
+  },
+};
 
 Code.LibsOverview = function () {
-    return [
-        {
-            name: 'php',
-            language: this.Libs.php[0].language,
-            code: this.Libs.php[0].code
-        },
-        {
-            name: "Javascript",
-            language: this.Libs.javascript[0].language,
-            code: this.Libs.javascript[0].code
-        },
-        {
-            name: "Django",
-            language: this.Libs.django[0].language,
-            code: this.Libs.django[0].code
-        },
-        {
-            name: "Laravel",
-            language: this.Libs.laravel[0].language,
-            code: this.Libs.laravel[0].code
-        }
-    ]
-}
+  return [
+    {
+      name: "php",
+      language: this.Libs.php[0].language,
+      code: this.Libs.php[0].code,
+    },
+    {
+      name: "Javascript",
+      language: this.Libs.javascript[0].language,
+      code: this.Libs.javascript[0].code,
+    },
+    {
+      name: "Django",
+      language: this.Libs.django[0].language,
+      code: this.Libs.django[0].code,
+    },
+    {
+      name: "Laravel",
+      language: this.Libs.laravel[0].language,
+      code: this.Libs.laravel[0].code,
+    },
+  ];
+};

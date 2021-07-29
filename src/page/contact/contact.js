@@ -15,15 +15,14 @@ export default function ContactPage() {
   };
   const [OtherReason, setOtherReason] = useState(false);
   return (
-    <div style={{background:"url('./pictures/ac3.jpg')"}} >
+    <div style={{ background: "url('./pictures/ac3.jpg')" }}>
       <Wrapper
         id="Landing"
         childrenClassName="transform md:scale-90"
         className="py-24 md:py-4"
       >
         <h2 className="font-medium text-center text-qosgray md:mt-16 md:w-10/12 mx-auto">
-          {" "}
-          {Infos.msg.Title}{" "}
+          {Infos.msg.Title}
         </h2>
         <p class="mt-4 md:w-7/12 mx-auto text-center text-qosgray text-mlg md:text-dlg font-medium">
           {Infos.msg.description}
@@ -144,8 +143,9 @@ export default function ContactPage() {
                 placeholder="Tell us more about your plan"
               ></textarea>
             </div>
-            <button className="btn block btn-md rounded-lg btn-primary mt-4 mx-auto">
-             {Infos.button.mailSender} <span className="fi fi-rr-paper-plane"></span>
+            <button className="btn block btn-md bg-qosorange bg-opacity-90 rounded-full px-8 btn-primary mt-4 mx-auto">
+              {Infos.button.mailSender}
+              <span className="fi fi-rr-paper-plane inline-block ml-2"></span>
             </button>
           </form>
         </section>
