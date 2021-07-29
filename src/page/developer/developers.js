@@ -17,7 +17,7 @@ export default function DevelopersPage() {
         <Wrapper className="pt-24">
             <HeaderDocs Open={Open} setOpen={setOpen} />
             <Route exact path="/docs">
-                <h2>Documention</h2>
+                <h2>Documentation</h2>
                 <div>
                     <p className="md:w-6/12 pt-4">
                         This document describes how a third party will connect to o Mobile

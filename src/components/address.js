@@ -27,11 +27,11 @@ export default function Address({ className, textColor = false }) {
   const [CountryNumber, setNumber] = useState(0);
   const { Lang, setLang } = useLangContext();
   useEffect(() => {
-    if (CountryNumber === 1) {
-      setLang("en");
-    } else {
-      setLang("fr");
-    }
+    // if (CountryNumber === 1) {
+    //   setLang("en");
+    // } else {
+    //   setLang("fr");
+    // }
   }, [CountryNumber,setLang]);
   return (
     <div className={className}>
