@@ -9,9 +9,9 @@ export default function LandingSection() {
     const { Lang } = useLangContext()
     const Infos= {msg:Messages[Lang],button:buttonText[Lang]}
     return (<Wrapper id="Landing"  childrenClassName="md:flex pt-5 flex-row-reverse relative"  className="pb-10 bg-qosblu bg-opacity-80 md:pb-20 z-10 overflow-hidden relative">
-        <div id="Landing1" className="md:w-6/12 h-80 z-0 -mt-5 md:mt-16 block mx-auto md:h-full md:-right-8 lg:-right-10 md:absolute">
-        <img src={media.Illustrations.LandingPage.firstIllustration} alt="" className="block mx-auto h-full" />
+        <div id="Landing1" className="md:w-6/12 h-80 z-0 -mt-5 absolute md:mt-10 block mx-auto md:h-full md:-right-8 lg:-right-10  md:absolute">
         </div>
+        <img src={media.Illustrations.LandingPage.firstIllustration} alt="" className="md:w-6/12 h-80 z-0 -mt-5 md:mt-16 block mx-auto md:h-full md:-right-8 lg:-right-10 md:absolute" />
         <div className="z-10 relative">
             <h1 className="md:pt-32 md:w-8/12 lg:w-10/12 xl:w-9/12">
                 {Infos.msg.HelloText}

@@ -22,65 +22,70 @@ export default function PricingPage() {
         backgroundSize: "100% 0.4%",
       }}
     >
-      <h2 class="text-qosdark text-opacity-80 mt-4"> {Infos.Title} </h2>
-      <h4 class="mt-4 text-qosdark text-opacity-80 font-normal md:mt-8">
+      <h2 className="text-qosdark text-opacity-80 mt-4"> {Infos.Title} </h2>
+      <h4 className="mt-4 text-qosdark text-opacity-80 font-normal md:mt-8">
         {" "}
         {Infos.description}{" "}
       </h4>
       <div className="mt-10 md:flex flex-wrap justify-between lg:w-11/12 mx-auto">
-        <div class="pricingCard h-96 mx-auto lg:mx-0 lg:max-w-sm max-w-xs p-4 border border-opacity-75 border-qosgray">
+        <div className="pricingCard h-96 mx-auto lg:mx-0 lg:max-w-sm max-w-xs p-4 border border-opacity-75 border-qosgray">
           <h1 className="text-center md:text-dH2 my-4">USSD</h1>
-          <h1 class="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">
+          <h1 className="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">
             1,7%
           </h1>
           <p className="w-11/12 mx-auto text-center">
             {Infos.pricingCard.fees}
           </p>
-          <div class="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4">
             <img
-              class="inline-block h-8 w-8"
+              className="inline-block h-8 w-8"
               name="checked"
               src={check}
               alt="pricingOption"
             />
-            <p class="w-10/12 inline-block"> {Infos.pricingCard.point}</p>
+            <p className="w-10/12 inline-block"> {Infos.pricingCard.point}</p>
           </div>
-          <div class="flex justify-between items-center mt-8">
+          <div className="flex justify-between items-center mt-8">
             <img
-              class="inline-block h-8 w-8"
+              className="inline-block h-8 w-8"
               name="checked"
               src={check}
               alt="pricingOption"
             />
-            <p class="w-10/12 inline-block"> {Infos.pricingCard.USSD.point}</p>
+            <p className="w-10/12 inline-block">
+              {" "}
+              {Infos.pricingCard.USSD.point}
+            </p>
           </div>
         </div>
-        <div class="pricingCard mt-8 md:mt-0 h-96 mx-auto lg:mx-0 lg:max-w-sm max-w-xs p-4 border border-opacity-75 border-qosgray">
+        <div className="pricingCard mt-8 md:mt-0 h-96 mx-auto lg:mx-0 lg:max-w-sm max-w-xs p-4 border border-opacity-75 border-qosgray">
           <h1 className="text-center md:text-dH2 my-4">API</h1>
-          <h1 class="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">
+          <h1 className="text-center bg-gradient-to-bl lg:text-dH2 from-qosorange to-qosblue bg-clip-text text-transparent mx-auto">
             1,7%
           </h1>
           <p className="w-11/12 mx-auto text-center">
             {" "}
             {Infos.pricingCard.fees}{" "}
           </p>
-          <div class="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4">
             <img
-              class="inline-block h-8 w-8"
+              className="inline-block h-8 w-8"
               name="checked"
               src={check}
               alt="pricingOption"
             />
-            <p class="w-10/12 inline-block">{Infos.pricingCard.point}</p>
+            <p className="w-10/12 inline-block">{Infos.pricingCard.point}</p>
           </div>
-          <div class="flex justify-between items-center mt-8">
+          <div className="flex justify-between items-center mt-8">
             <img
-              class="inline-block h-8 w-8"
+              className="inline-block h-8 w-8"
               name="checked"
               src={check}
               alt="pricingOption"
             />
-            <p class="w-10/12 inline-block">{Infos.pricingCard.API.point}</p>
+            <p className="w-10/12 inline-block">
+              {Infos.pricingCard.API.point}
+            </p>
           </div>
         </div>
       </div>
@@ -105,7 +110,7 @@ export default function PricingPage() {
       </div>
       <section className="relative overflow-hidden md:overflow-visible justify-between mx-auto max-w-lg md:max-w-screen-lg flex">
         <div
-          className={`min-w-full md:w-6/12 mr-8 md:min-w-min pricingCard rounded-r-lg rounded-b-lg md:rounded-lg grid grid-flow-row gap-y-4 transform bg-opacity-70 ${
+          className={`min-w-full md:w-6/12 md:mr-8 md:min-w-min pricingCard rounded-r-lg rounded-b-lg md:rounded-lg grid grid-flow-row gap-y-4 transform bg-opacity-70 ${
             isAboutAPI
               ? "translate-x-full md:translate-x-0 md:scale-x-100 scale-x-0"
               : "translate-x-0 scale-x-100"
@@ -114,14 +119,14 @@ export default function PricingPage() {
           <h3 className="text-center my-4 hidden md:block">
             {Infos["details"].USSD.Title}
           </h3>
-          {Infos["details"].USSD.Lists.map((item) => (
-            <DetailsItem description={item} />
+          {Infos["details"].USSD.Lists.map((item, index) => (
+            <DetailsItem key={index} description={item} />
           ))}
           <div className="w-full">
             <p className="inline-block">{Infos["details"].USSD.shortText}</p>
             <img
               src={moov}
-              className="rounded-sm bg-qosdark h-9 inline-block ml-4"
+              className="rounded-sm h-9 inline-block ml-4"
               alt="mootPartners"
             />
             <img
@@ -132,7 +137,7 @@ export default function PricingPage() {
           </div>
         </div>
         <div
-          className={`min-w-full md:w-6/12 ml-8 pricingCard md:min-w-min rounded-r-lg rounded-b-lg md:rounded-lg bg-qosgray bg-opacity-70 transform  ${
+          className={`min-w-full md:w-6/12 md:ml-8 pricingCard md:min-w-min rounded-r-lg rounded-b-lg md:rounded-lg bg-qosgray bg-opacity-70 transform  ${
             isAboutAPI
               ? "-translate-x-full md:translate-x-0 scale-x-100 rounded-lg"
               : "translate-x-0 md:scale-x-100 scale-x-0"
@@ -142,14 +147,14 @@ export default function PricingPage() {
             <h3 className="text-center my-4 hidden md:block">
               {Infos["details"].API.Title}
             </h3>
-            {Infos["details"].API.Lists.map((item) => (
-              <DetailsItem description={item} />
+            {Infos["details"].API.Lists.map((item, index) => (
+              <DetailsItem key={index} description={item} />
             ))}
             <div className="w-full">
               <p className="inline-block"> {Infos["details"].API.shortText} </p>
               <img
                 src={moov}
-                class="bg-qosdark rounded-sm h-9 inline-block ml-4"
+                className="rounded-sm h-9 inline-block ml-4"
                 alt="mootPartners"
               />
               <img

@@ -50,7 +50,7 @@ export default function Navbar() {
         <Wrapper childrenClassName={`flex justify-between h-8 md:h-10 ${dark ? 'text-qosdark' : 'text-qosgray'} text-opacity-70 items-center justify-between`} className={`z-50 top-0 py-5 ${background && 'navBack shadow-lg'} ${hide && 'hidden'} rounded-none py-4 fixed w-full`} >
             <Link to="/">
                 <div className="h-full w-16 md:w-20 lg:w-20">
-                    <img src={dark ? media.Logos.qos.qosLogoBlack : media.Logos.qos.qosLogoWhite} class="h-full w-full" alt="QOS_LOGO" />
+                    <img src={dark ? media.Logos.qos.qosLogoBlack : media.Logos.qos.qosLogoWhite} className="h-full w-full" alt="QOS_LOGO" />
                 </div>
             </Link>
             <nav id="navbarLink" className="max-h-full w-8/12">

@@ -1,5 +1,6 @@
-import { Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Address from "./address";
+import Dropdown from "./dropdown";
 import Wrapper from "./sectionWrapper";
 import Messages from "./translations/Navbar.json";
 import { useLangContext } from "./translateContext";
@@ -35,15 +36,18 @@ export default function Footer() {
         childrenClassName="grid grid-flow-row content-center gap-y-6"
         className="py-6 border-b-2 border-qosgray border-opacity-50 text-qosgray relative z-30 text-opacity-70 mx-auto"
       >
-        <Link to="/">
-          <div className="h-8 w-16 md:w-32 md:h-16 lg:w-32 lg:h-16 md:self-center">
-            <img
-              src={media.Logos.qos.qosLogoWhite}
-              alt="QOS_logo"
-              className="h-full w-full"
-            />
-          </div>
-        </Link>
+        <div className='flex justify-between'>
+          <Link to="/">
+            <div className="h-8 w-16 md:w-32 md:h-16 lg:w-32 lg:h-16 md:self-center">
+              <img
+                src={media.Logos.qos.qosLogoWhite}
+                alt="QOS_logo"
+                className="h-full w-full"
+              />
+            </div>
+          </Link>
+          <Dropdown />
+        </div>
         <nav className="md:flex justify-between border-b border-qosgray border-opacity-50 pb-4 items-start font-medium md:font-normal md:mt-5">
           <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
             <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
@@ -110,7 +114,7 @@ export default function Footer() {
           </ul>
           <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
             <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
-            {siteMap.legal[0]}
+              {siteMap.legal[0]}
             </span>
             <li className="text-opacity-60">
               <Link to="/terms-and-conditions">{siteMap.legal[1]}</Link>

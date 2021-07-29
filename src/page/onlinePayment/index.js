@@ -67,7 +67,7 @@ export default function OnlinePaymentPage() {
         </div>
         <h2 className="text-center mt-8">{Infos["subTitle0"]} </h2>
         <div className="my-8 grid gap-x-4 grid-flow-col overflow-auto hideScroll">
-            {Infos.testimonials.map((testify, index) => <TestiMon name={testify.name} poste={testify.poste} text={testify.text} />)}
+            {Infos.testimonials.map((testify, index) => <TestiMon key={index} name={testify.name} poste={testify.poste} text={testify.text} />)}
         </div>
     </Wrapper>
     )

@@ -1,21 +1,24 @@
 import React, { useContext, useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
-let LangContext = React.createContext()
+let LangContext = React.createContext();
+const SupportedLanguages = ["en", "fr"];
 
 export default function LangsProvider({ children }) {
-    const userLanguage = navigator.language.split('-')[0]
-    const [Lang, setLang] = useState(userLanguage)
-    
-    useEffect(()=>{
-        console.log(navigator.languages)
-    })
+  const userLanguage = navigator.language.split("-")[0];
+  const [Lang, setLang] = useState(
+    SupportedLanguages.includes(userLanguage) ? userLanguage : "en"
+  );
 
-    return (<LangContext.Provider value={{ Lang, setLang }}>
-        {children}
-    </LangContext.Provider >)
+  useEffect(() => {});
+
+  return (
+    <LangContext.Provider value={{ Lang, setLang }}>
+      {children}
+    </LangContext.Provider>
+  );
 }
 
 export function useLangContext() {
-    return useContext(LangContext)
+  return useContext(LangContext);
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import './images/partners/prism-night-owl.css'
+import './prism-night-owl.css'
 import 'react-intl-tel-input/dist/main.css';
 import './index.css'
 import App from './App'
