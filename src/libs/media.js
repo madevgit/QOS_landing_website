@@ -8,24 +8,20 @@ import qosLogoBlack from '../images/QOS/QOS_BLACK.png'
 import partner0 from '../images/partners/africainevie.png'
 import partner1 from '../images/partners/altlantique.png'
 import partner2 from '../images/partners/arab.png'
-import partner3 from '../images/partners/BeninLogue.png'
 import partner4 from '../images/partners/crs.png'
 import partner5 from '../images/partners/culture.png'
 import partner6 from '../images/partners/farmerline.png'
-import partner7 from '../images/partners/franceTel.png'
 import partner8 from '../images/partners/friklabel.png'
-import partner9 from '../images/partners/gmd.png'
 import partner10 from '../images/partners/gozem.png'
 import partner11 from '../images/partners/itNum.png'
 import partner12 from '../images/partners/kea.png'
 import partner13 from '../images/partners/mtn.png'
-import partner14 from '../images/partners/nautilusTech.png'
-import partner15 from '../images/partners/nsiaGmns.png'
 import partner16 from '../images/partners/padme.png'
 import partner17 from '../images/partners/paiementPro.png'
 import partner18 from '../images/partners/Pieuve.png'
 import partner19 from '../images/partners/siroco.png'
 import partner20 from '../images/partners/sunu.png'
+import partner21 from '../images/partners/moov.png'
 
 // 1.3- CUSTUMERS AND PARTNERS LOGOS 
 import github from '../images/clients/github.png'
@@ -49,6 +45,9 @@ import docsLearn from '../icons/theme1/030-web development.svg'
 import offline from '../icons/theme1/008-404 error.svg'
 import architecture from '../icons/theme1/002-site map.svg'
 import thirdElemen from '../icons/theme1/050-devices.svg'
+import upload from '../icons/upload.png'
+import file from '../icons/file.png'
+import Delete from '../icons/delete.jpg'
 
 // 2.1-Icon Theme 2
 import security1 from '../icons/theme2/033-credit card.svg'
@@ -81,6 +80,7 @@ import USSDi from '../images/illustrations/illustration10.png'
 import landingUSSDi from '../images/illustrations/illustration7.jpg'
 import landingDashi from '../images/illustrations/illustration3.png'
 import USSDflowi from '../images/illustrations/illustration8.png'
+import ussdBigCapture from '../images/illustrations/illustration1.png'
 
 
 
@@ -89,7 +89,8 @@ export const media = {
         LandingPage: {
             firstIllustration: qosLandingi,
             secondIllustration: landingDashi,
-            thirdIllustration: landingUSSDi
+            thirdIllustration: landingUSSDi,
+            altFirstImage:ussdBigCapture
         },
         onlinePaymentPage: {
             firstIllustration: onlinePi,
@@ -112,7 +113,10 @@ export const media = {
             docsLearn: docsLearn,
             offline: offline,
             architecture: architecture,
-            thirdElemen: thirdElemen
+            thirdElemen: thirdElemen,
+            upload: upload,
+            file: file,
+            delete: Delete
         },
         {
             security: security1,
@@ -138,12 +142,12 @@ export const media = {
             qosLogoWhite: qosLogoWhite,
             qosLogoBlack: qosLogoBlack
         },
-        customers: [partner0, partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8, partner9, partner10, partner11, partner12, partner13, partner14, partner15, partner16, partner17, partner18, partner19, partner20],
+        customers: [partner0, partner1, partner2, partner4, partner5, partner6, partner8, partner10, partner11, partner12, partner13, partner16, partner17, partner18, partner19, partner20, partner21],
         other: {
             github: github,
             wordpress: wp,
-            moov:moov,
-            mtn:mtn
+            moov: moov,
+            mtn: mtn
         }
     },
     Flags: {

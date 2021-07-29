@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import IntlTelInput from 'react-intl-tel-input'
+import { media } from '../../libs/media'
 import Wrapper from '../../components/sectionWrapper'
+import Messages from './translations/index.json'
+import InputsText from '../../translations/input.json'
+import { useLangContext } from '../../components/translateContext'
 export default function RegisterPage() {
+    const { Lang } = useLangContext()
+    const Infos = { msg: Messages[Lang], input: InputsText[Lang] }
     useEffect(() => {
-
-        document.querySelectorAll("input").forEach(input => {
-            input.addEventListener("input", function (e) {
-                this.addEventListener('invalid', function () {
-                    alert('invalid input')
-                })
-                this.addEventListener('valid', function (e) {
-                    alert('valid input')
-                })
-            });
-        });
-
         let stepForm = document.querySelector('#stepForm')
         let formWidth = stepForm.clientWidth
         let CurrentScroll = stepForm.scrollLeft
@@ -48,11 +43,11 @@ export default function RegisterPage() {
                 if (CurrentScroll === (formWidth * 2)) {
                     setTimeout(() => {
                         document.querySelector('#next').setAttribute('form', 'stepForm')
-                        document.querySelector('#next').firstChild.replaceWith('Create Account')
+                        document.querySelector('#next').firstChild.replaceWith(Infos.msg.registerButton)
                     })
                 } else {
                     document.querySelector('#next').removeAttribute('form')
-                    document.querySelector('#next').firstChild.replaceWith('next')
+                    document.querySelector('#next').firstChild.replaceWith(Infos.msg.nextButton)
                 }
                 if (CurrentScroll > 0) {
                     document.querySelector('#prev').hidden = false
@@ -64,76 +59,139 @@ export default function RegisterPage() {
     }, [])
     return (
         <Wrapper style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "100% 1%" }} >
-            <div class="block w-12/12 max-w-lg px-2 pricingCard py-4 mx-auto my-24 rounded-xl">
-                <h3 class="text-center">Create  your <span className="text-qosorange text-opacity-90"> QOS </span> account</h3>
-                <div class="my-4 w-5/12 md:w-3/12 mx-auto h-8 flex items-center justify-between">
-                    <button id="0" class="stepStatus active" >1</button>
-                    <button id="1" class="stepStatus" >2</button>
-                    <button id="2" class="stepStatus" >3</button>
+            <div className="block w-12/12 max-w-lg px-2 pricingCard py-4 mx-auto my-24 rounded-xl">
+                {Lang === "en" ? <h3 className="text-center"> {Infos.msg.Title0} <span className="text-qosorange text-opacity-95"> {Infos.msg.Title1} </span> {Infos.msg.Title2}</h3> : <h3 className="text-center"> {Infos.msg.Title0} {Infos.msg.Title1}<span className="text-qosorange text-opacity-95">  {Infos.msg.Title2} </span> </h3>}
+                <div className="my-4 w-5/12 md:w-3/12 mx-auto h-8 flex items-center justify-between">
+                    <button id="0" className="stepStatus active" >1</button>
+                    <button id="1" className="stepStatus" >2</button>
+                    <button id="2" className="stepStatus" >3</button>
                 </div>
-                <form id="stepForm" class="overflow-x-hidden hideScroll flex max-w-full">
-                    <div class="min-w-full md:px-8 max-w-full" id="1">
-                        <div class="mx-auto w-full px-2">
-                            <label class="block">Firstname:</label>
-                            <input class="" name="firstname" required autofocus placeholder="your firstname" />
+                <form id="stepForm" className="overflow-x-hidden hideScroll flex max-w-full">
+                    <div className="min-w-full md:px-8 max-w-full" id="1">
+                        <div className="mx-auto w-full px-2">
+                            <label className="block"> {Infos.input.firstname.label} </label>
+                            <input className="" name="firstname" required placeholder={Infos.input.firstname.placeholder} />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">Lastname:</label>
-                            <input class=" " name="lastname" required placeholder="your lastname" />
+                        <div className="mt-6 mx-auto w-full px-2">
+                            <label className="block"> {Infos.input.lastname.label}</label>
+                            <input className=" " name="lastname" required placeholder={Infos.input.lastname.placeholder} />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">Country:</label>
-                            <select name="coundtry">
-                                <option value="BJ">Benin</option>
-                                <option value="NJ">Nigeria</option>
-                            </select>
+                        <div className="mt-6 mx-auto w-full px-2">
+                            <label className="block"> {Infos.input.tel.label}</label>
+                            <IntlTelInput onlyCountries={['bj', 'tg']} telInputProps={{ required: true }} preferredCountries={['bj', 'tg']} />
                         </div>
                     </div>
-                    <div class="min-w-full md:px-8 max-w-full" id="2">
-                        <div class="mx-auto w-full px-2">
-                            <label class="block">App Name / Business Name:</label>
-                            <input class=" " name="bname" type='text' required placeholder="App name or bussiness name" />
+                    <div className="min-w-full md:px-8 max-w-full" id="2">
+                        <div className="mx-auto w-full px-2">
+                            <label className="block">{Infos.input.business.label}</label>
+                            <input className=" " name="bname" type='text' required placeholder={Infos.input.business.placeholder} />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">Phone Number:</label>
-                            <input className="" required name="" type="tel" />
-                        </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">Bussiness description:</label>
-                            <textarea name="description">
+                        <div className="mt-6 mx-auto w-full px-2">
+                            <label className="block"></label>
+                            <textarea name="description" placeholder={Infos.input.descriptionB.placeholder}>
 
                             </textarea>
                         </div>
+                        <div className="mt-4 mx-auto w-full px-2">
+                            <label className="block"> {Infos.input.file.label}  <span className="text-small">{Infos.input.file.side}</span> </label>
+                            <FilesUploader text={Infos.input.file.placeholder} />
+                        </div>
                     </div>
-                    <div class="min-w-full md:px-8 max-w-full" id="3">
-                        <div class=" mx-auto w-full px-2">
-                            <label class="block">Email:</label>
-                            <input class="" name="bname" type='email' required placeholder="hello@gmail.com" />
+                    <div className="min-w-full md:px-8 max-w-full" id="3">
+                        <div className=" mx-auto w-full px-2">
+                            <label className="block">{Infos.input.email.label}</label>
+                            <input className="" name="bname" type='email' required placeholder={Infos.input.email.placeholder} />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">password:</label>
-                            <input class="" name="lastname" type="password" required />
+                        <div className="mt-6 mx-auto w-full px-2">
+                            <label className="block">{Infos.input.password.label}</label>
+                            <input className="" name="lastname" type="password" required />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
-                            <label class="block">passsword comfirmation:</label>
-                            <input class="" name="lastname" type="password" required />
+                        <div className="mt-6 mx-auto w-full px-2">
+                            <label className="block">{Infos.input.passwordC.label}</label>
+                            <input className="" name="lastname" type="password" required />
                         </div>
-                        <div class="mt-6 mx-auto w-full px-2">
+                        <div className="mt-6 mx-auto w-full px-2">
                             <input id="privacy" type="checkbox" name="privacy" required />
-                            <label htmlFor="privacy" class="text-msm font-normal ml-4">Are you agree with the terms of use and data utilisation ?</label>
+                            <label htmlFor="privacy" className="text-msm font-normal ml-4">{Infos.input.checkTerms.label}</label>
                         </div>
                     </div>
                 </form>
-                <div class="font-bold text-qosblue md:w-8/12 mx-auto flex justify-around  mt-4">
-                    <button hidden id="prev" class="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
-                        <span class="fi fi-rr-arrow-left text-msm"></span> back
+                <div className="font-bold text-qosblue md:w-8/12 mx-auto flex justify-around  mt-4">
+                    <button hidden id="prev" className="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
+                        <span className="fi fi-rr-arrow-left text-msm"></span> {Infos.msg.backButton}
                     </button>
-                    <button id="next" type="submit" class="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
-                        next <span class="fi inline-block align-bottom ml-4 fi-rr-arrow-right text-msm"></span>
+                    <button id="next" type="submit" className="controls shadow-lg bg-qosgray bg-opacity-80 py-2 px-3 rounded-lg text-mlg">
+                        {Infos.msg.nextButton} <span className="fi inline-block align-bottom ml-4 fi-rr-arrow-right text-msm"></span>
                     </button>
                 </div>
             </div>
 
         </Wrapper>
+    )
+}
+
+export function FilesUploader({ text }) {
+    const addFileRef = useRef()
+    const [Files, setFiles] = useState({
+        array: [],
+        list: new DataTransfer()
+    })
+    function filesToArray(files) {
+        let filesArray = []
+        for (let i = 0; i < files.length; i++) {
+            filesArray.push(files.item(i))
+        }
+        return filesArray
+    }
+
+    function handleFileList(e) {
+        let files = e.target.files
+        let array = [];
+        let previousFiles = Files.list
+        for (let i = 0; i < files.length; i++) {
+            previousFiles.items.add(files.item(i))
+        }
+        e.target.files = previousFiles.files
+        array = filesToArray(previousFiles.files)
+        setFiles({ array: array, list: previousFiles })
+    }
+
+    function delFile(index, e) {
+        let dt = new DataTransfer()
+        let files = addFileRef.current.files
+        for (let i = 0; i < files.length; i++) {
+            if (index !== i) {
+                dt.items.add(files.item(i))
+            }
+        }
+        addFileRef.current.files = dt.files
+        setFiles({ array: filesToArray(dt.files), list: dt })
+    }
+
+    return (
+        <div className="flex h-24 justify-between">
+            <div onClick={() => addFileRef.current.click()} className="w-4/12 md:w-3/12 cursor-pointer rounded-xl my-2 border-2 overflow-hidden border-dashed border-qosdark border-opacity-40 p-2 text-center">
+                <img src={media.Icons[0].upload} className="opacity-70 md:h-11 mx-auto" alt="hello" />
+                <input ref={addFileRef} onChange={handleFileList} className="hidden" type="file" multiple />
+                <span className="text-small text-qosdark text-opacity-70">{text}</span>
+            </div>
+            <div className="py-2 w-7/12 md:w-8/12 md:grid grid-cols-2 gap-x-4 max-h-full overflow-auto hideScroll">
+                {Files.array.map((file, index) => (<File key={index} index={index} name={file.name} delFunc={delFile} />))}
+            </div>
+        </div>
+    )
+}
+
+export function File({ delFunc, name, index }) {
+    return (
+        <div className="p-1 my-1 bg-qosgray bg-opacity-80 h-8 shadow-md items-center rounded-md justify-between flex">
+            <img src={media.Icons[0].file} className="opacity-70 h-6 p-1" alt="hello" />
+            <p className="text-msm w-7/12 truncate mx-2">
+                {name}
+            </p>
+            <button onClick={(e) => delFunc(index, e)} type="button" className="p-1 h-6 w-6 block">
+                <img src={media.Icons[0].delete} className="h-full w-full opacity-70" alt="deleteButton" />
+            </button>
+        </div>
     )
 }

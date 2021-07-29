@@ -1,0 +1,30 @@
+{
+    "en":{
+        "security":{
+            "Title":"Total Security",
+            "description":"QOS api is designed on the \"security First\" principle.  your transcations and customers data are fully protected so payments make in our platform are 100% secure."
+        },
+        "handle":{
+            "Title":"Easy to handle",
+            "description":"Supporting QOS products is a very simple exercise for both end users and developers. Well-detailed documentation and an array of integration tools."
+        },
+        "fees":{
+            "Title":"Low fees",
+            "description":"QOS wants to be a loyal ally and supporter of companies and start-ups. QOS does not apply any fees apart from 1.7% tax on each successful transaction."
+        }
+    },
+    "fr":{
+        "security":{
+            "Title":"Sécurite Total",
+            "description":"L'api QOS est conçue sur le principe de la \"sécurité d'abord\". Vos transcations et les données de vos clients sont entièrement protégées, de sorte que les paiements effectués sur notre plateforme sont 100% sécurisés."
+        },
+        "handle":{
+            "Title":"Facile à manipuler",
+            "description":"La prise en charge des produits QOS est un exercice très simple, tant pour les utilisateurs finaux que pour les développeurs. Une documentation bien détaillée et une panoplie d'outils d'intégration."
+        },
+        "fees":{
+            "Title":"Frais réduits",
+            "description":"QOS veut être un allié et un soutien loyal des entreprises et des start-ups. QOS n'applique pas de frais, à l'exception d'une taxe de 1,7 % sur chaque transaction réussie."
+        }
+    }
+}

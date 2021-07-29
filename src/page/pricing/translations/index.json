@@ -1,0 +1,78 @@
+{
+    "en":{
+        "Title":"Simple, transparent pricing",
+        "description":"Simple choose your plan and apply",
+        "pricingCard":{
+            "fees":"for every subsequent successful transaction",
+            "point":"payment to your mobile money account daily",
+            "USSD":{
+                "point":"Installation charge depend to your need"
+            },
+            "API":{
+                "point":"No hidden fee or charges"
+            }
+        },
+        "details":{
+            "Title":"Learn more about",
+            "USSD":{
+                "shortText":"Support by",
+                "Lists":[
+                    "Collect payments from any type of phones without internet",
+                    "No development required for standard menu",
+                    "Starting using your personalized merchant code same day",
+                    "Retrieve all customers transaction data",
+                    "Starting using your personalized merchant code same day"
+                ]
+            },
+            "API":{
+                "shortText":"Payment by",
+                "Lists":[
+                    "Collect payments from your apps and websites",
+                    "Access to payment dashboard",
+                    "Collect payments from your apps and websites",
+                    "Reverse transactions",
+                    "Retrieve all customers transaction data"
+                ]
+            }
+        }
+    },
+    "fr":{
+        "Title":"Une tarification simple et transparente",
+        "description":"Il vous suffit de choisir votre plan et de l'appliquer",
+        "pricingCard":{
+            "fees":"pour chaque transaction ultérieure réussie",
+            "point":"paiement quotidien sur votre compte mobile money",
+            "USSD":{
+                "point":"Les frais d'installation dépendent de vos besoins"
+            },
+            "API":{
+                "point":"Pas de frais ou de charges cachés"
+            }
+        },
+        "details":{
+            "Title":"En savoir plus sur",
+            "USSD":{
+                "Title":"Détails de l'USSD",
+                "shortText":"Soutenu par",
+                "Lists":[
+                    "Recueillir des paiements à partir de n'importe quel type de téléphone sans Internet",
+                    "Aucun développement requis pour le menu standard",
+                    "Commencez à utiliser votre code marchand personnalisé le jour même",
+                    "Récupérer toutes les données de transaction des clients",
+                    "Commencez à utiliser votre code marchand personnalisé le jour même"
+                ]
+            },
+            "API":{
+                "Title":"Détails de l'API",
+                "shortText":"Paiement par",
+                "Lists":[
+                    "Collectez les paiements à partir de vos applications et sites web",
+                    "Accès au tableau de bord des paiements",
+                    "Collectez les paiements à partir de vos applications et sites web",
+                    "Transactions inversées",
+                    "Récupérer toutes les données de transaction des clients"
+                ]
+            }
+        }
+    }
+}

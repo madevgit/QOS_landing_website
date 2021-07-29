@@ -5,17 +5,23 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        'partnersAnimation': {
+        'fancyRadius': {
           '0%,100%': {
-         transform:'translateY(0)'
+            borderRadius:" 58% 42% 56% 44% / 39% 36% 64% 61%",
+            transform:"translate(2%,4%)"
+          },
+          '25%':{
+            borderRadius:"30% 70% 70% 30% / 30% 30% 70% 70%",
+            transform:"translate(0%,2%)"
           },
           '50%':{
-             transform:'translateY(-20em)'
+            borderRadius:"60% 40% 70% 30% / 42% 82% 18% 58%",
+            transform:"translate(4%,2%)"
           }
         }
       },
       animation: {
-        'partnersAnimation': 'partnersAnimation 50s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite forwards'
+        'fancyRadius': 'fancyRadius 6s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite forwards'
       }
     },
     screens: {
@@ -27,12 +33,12 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      qosdark: '#04052E',
-      qosorange: '#FF7D00',
-      qosblue: '#0D00A4',
+      qosdark: '#0C0E45',
+      qosorange: '#FF9F1C',
+      qosblue: '#4F53FC',
       qosred: '#FC4F53',
       qosgreen: '#53FC4F',
-      qosgray: '#FFFFFF',
+      qosgray: '#F8F8F9',
       coolGray: {
         50: '#f9fafb',
         100: '#f3f4f6',
@@ -285,6 +291,7 @@ module.exports = {
       dST: ['1.5rem', { lineHeight: '100%', letterSpacing: '-0.02em' }],
     },
     fontWeight: {
+      light:'300',
       normal: '400',
       medium: '500',
       bold: '700',

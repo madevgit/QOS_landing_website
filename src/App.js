@@ -14,6 +14,8 @@ import OfflinePaymentPage from './page/offlinePayment'
 import OnlinePaymentPage from './page/onlinePayment'
 import ShareLinkPage from './page/sharableLink'
 import DevelopersPage from './page/developer/developers'
+import Sitemap from './page/sitemap'
+import TermsAndCondition from './page/termsAndCondition'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-python'
@@ -36,7 +38,9 @@ const MainPaths = [
   '/register',
   '/offline-payment',
   '/online-payment',
-  '/shareLink-payment'
+  '/shareLink-payment',
+  '/sitemap',
+  '/terms-and-conditions'
 ]
 
 export default function App() {
@@ -86,6 +90,12 @@ export default function App() {
         </Route>
         <Route path={`${path}docs`}>
           <DevelopersPage />
+        </Route>
+        <Route exact path={`${path}sitemap`}>
+          <Sitemap />
+        </Route>
+        <Route exact path={`${path}terms-and-conditions`}>
+          <TermsAndCondition/>
         </Route>
       </MainLayout>
       <Footer />

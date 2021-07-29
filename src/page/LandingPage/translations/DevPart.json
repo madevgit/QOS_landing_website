@@ -1,0 +1,18 @@
+{
+    "en":{
+        "PreTitle":"Easy and flexible for developers",
+        "Title":"APIs build to simplify developers work",
+        "description0":"We make it easy for developers to integrate with our API. We remove unnecessary complexity and irrelevant details so you can get up and running with QoS in just minutes!",
+        "subTitle0":"Cross over technologies",
+        "description1":"Ours APIS are build to support many techonlogies such as PHP, Laravel, Django & Ajax, javascript and wordpress woocommerce.",
+        "subTitle1":"Easy to integrate"
+    },
+    "fr":{
+        "PreTitle":"Facile et flexible pour les développeurs",
+        "Title":"Des API conçues pour simplifier le travail des développeurs",
+        "description0":"Nous facilitons l'intégration notre API aux développeurs. Nous supprimons la complexité inutile et les détails non pertinents afin que vous puissiez être opérationnel avec QoS en quelques minutes seulement !",
+        "subTitle0":"Technologies croisées",
+        "description1":"Nos APIS sont conçus pour supportés par de nombreuses technologies telles que PHP, Laravel, Django & Ajax, javascript et wordpress woocommerce.",
+        "subTitle1":"Intégration facile"
+    }    
+}

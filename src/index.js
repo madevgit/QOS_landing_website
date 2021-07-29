@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ReactDOM from 'react-dom'
-import 'prismjs/themes/prism.css'
+import './images/partners/prism-night-owl.css'
+import 'react-intl-tel-input/dist/main.css';
 import './index.css'
 import App from './App'
+import LangsProvider from './components/translateContext';
 
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <LangsProvider>
+      <Router>
+        <App />
+      </Router>
+    </LangsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

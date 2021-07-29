@@ -9,11 +9,13 @@ import StatsSection from "./StatsSection"
 export default function LandingPage() {
     return (
         <>
-            <LandingSection />
+            <div style={{background:"url(./pictures/authpageBackground.png)"}}>
+                <LandingSection />
+            </div>
             <Partners />
-            <OfflineBussiness />
             <WebBussiness />
-            <div className="bg-qosgray">
+            <OfflineBussiness />
+            <div id="webDev" className="bg-qosdark bg-opacity-90">
                 <DevsSection />
             </div>
             <QualitySection />

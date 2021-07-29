@@ -1,35 +1,38 @@
 import Wrapper from "../../components/sectionWrapper"
 import { media } from "../../libs/media"
+import { useLangContext } from "../../components/translateContext"
+import Messages from './translations/QualitySection.json'
 const { security, lowFees, easyHandling } = media.Icons[1]
 export default function QualitySection() {
-    return (<Wrapper className="py-8 bg-qosgray">
+    const { Lang } = useLangContext()
+    const Infos = Messages[Lang]
+    return (<Wrapper className="py-8 bg-qosgray -mt-12 pt-16">
         <div className="md:grid grid-flow-col gap-x-6">
             <div>
                 <div className="my-4">
                     <img className="opacity-80 h-8 w-8 mb-4 block md:mx-auto" src={security} alt="cross over technologies" />
-                    <h4 className="md:text-center"> Total Security </h4>
+                    <h4 className="md:text-center"> {Infos["security"].Title} </h4>
                 </div>
                 <p className="mt-2">
-                    QOS api is designed on the "security first" principle.
-                    It protects you from all forms of scams. Your transactions and personal data as well as those of your customers are protected
+                    {Infos["security"].description}
                 </p>
             </div>
             <div>
                 <div className="my-4">
                     <img className="opacity-80 h-8 w-8 mb-4 block md:mx-auto" src={easyHandling} alt="cross over technologies" />
-                    <h4 className="md:text-center"> Easy to handle </h4>
+                    <h4 className="md:text-center"> {Infos["handle"].Title} </h4>
                 </div>
                 <p className="mt-2">
-                    Supporting QOS products is a very simple exercise for both end users and developers. Well-detailed documentation and an array of integration tools.
+                    {Infos["handle"].description}
                 </p>
             </div>
             <div>
                 <div className="my-4">
                     <img className="opacity-80 h-8 w-8 mb-4 block md:mx-auto" src={lowFees} alt="cross over technologies" />
-                    <h4 className="md:text-center"> Low fees </h4>
+                    <h4 className="md:text-center"> {Infos["fees"].Title} </h4>
                 </div>
                 <p className="mt-2">
-                    QOS wants to be a loyal ally and supporter of companies and start-ups. QOS does not apply any fees apart from 1.7% tax on each successful transaction.
+                    {Infos["fees"].description}
                 </p>
             </div>
         </div>

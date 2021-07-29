@@ -1,74 +1,135 @@
-import { Link, useLocation, useRouteMatch } from 'react-router-dom'
-import Address from './address'
-import Wrapper from './sectionWrapper'
-import { media } from '../libs/media'
-import { useEffect, useState } from 'react'
+import { Link, useLocation, useRouteMatch } from "react-router-dom";
+import Address from "./address";
+import Wrapper from "./sectionWrapper";
+import Messages from "./translations/Navbar.json";
+import { useLangContext } from "./translateContext";
+import { media } from "../libs/media";
+import siteMapMsg from "../page/sitemap/translations/index.json";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
-    const {pathname}= useLocation()
-    const [hide,setHide]=useState(false)
-    useEffect(()=>{
-        if(/\/docs/.test(pathname)){
-            setHide(true)
-        }else{
-            setHide(false)
-        }
-    },[pathname])
-    return (
-        <footer className={`text-msm md:text-dsm ${hide&&'hidden'}`}>
-            <Wrapper childrenClassName="grid md:gap-x-8 lg:gap-x-12 grid-flow-rows md:grid-flow-col gap-y-6" className="bg-qosdark bg-opacity-90 py-6 text-qosgray text-opacity-80 mx-auto">
-                <div className="h-8 w-16 md:w-32 md:h-16 lg:w-40 lg:h-20 md:self-center">
-                    <img src={media.Logos.qos.qosLogoWhite} alt="QOS_logo" className="h-full w-full" />
-                </div>
-                <div className="grid grid-flow-row gap-y-6">
-                    <nav className="grid grid-flow-col md:gap-x-8">
-                        <ul>
-                            <li className="font-mlg mb-2">Links</li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/pricing">Pricing</Link>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li className="font-mlg mb-2">Developers</li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/developers">Documentation</Link>
-                            </li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/">API Ressouces</Link>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li className="font-mlg mb-2">Company</li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/company">About Us</Link>
-                            </li>
-                            <li className="text-opacity-60 text-qosgray mb-1">
-                                <Link to="/contact-us">Contact_Us</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <span className="font-mlg mb-2">Ressources</span>
-                        <ul className="grid grid-flow-col">
-                            <li className="text-opacity-60 text-qosgray">
-                                <Link to="/contact">Custom Services</Link>
-                            </li>
-                            <li className="text-opacity-60 text-qosgray">
-                                <Link to="/">Terms of services</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <nav>
-                    <Address className="max-w-xs w-64 mx-auto" textColor={`text-qosgray text-opacity-70`} />
-                </nav>
-            </Wrapper>
-            <Wrapper className="bg-qosdark h-16 text-qosgray text-opacity-70 text-msm md:text-dsm text-center py-4">
-                <span>© Copyright 2021  |  Theme by QoS Integrated Center   |   All Rights Reserved</span>
-            </Wrapper>
-        </footer>
-    )
+  const { pathname } = useLocation();
+  const [hide, setHide] = useState(false);
+  const { Lang } = useLangContext();
+  const Infos = Messages[Lang];
+  const siteMap = siteMapMsg[Lang];
+  const Trad = {
+    fr: "© Copyright 2021 | Thème par QoS Integrated Center | Tous droits réservés",
+    en: "© Copyright 2021 | Theme by QoS Integrated Center | All Rights Reserved",
+  };
+  useEffect(() => {
+    if (/\/docs/.test(pathname)) {
+      setHide(true);
+    } else {
+      setHide(false);
+    }
+  }, [pathname]);
+  return (
+    <footer
+      className={`text-msm navBack bg-opacity-80 md:text-dsm relative ${
+        hide && "hidden"
+      }`}
+    >
+      <div className="bg-qosdark bg-opacity-40 absolute h-full w-full z-20"></div>
+      <Wrapper
+        childrenClassName="grid grid-flow-row content-center gap-y-6"
+        className="py-6 border-b-2 border-qosgray border-opacity-50 text-qosgray relative z-30 text-opacity-70 mx-auto"
+      >
+        <Link to="/">
+          <div className="h-8 w-16 md:w-32 md:h-16 lg:w-32 lg:h-16 md:self-center">
+            <img
+              src={media.Logos.qos.qosLogoWhite}
+              alt="QOS_logo"
+              className="h-full w-full"
+            />
+          </div>
+        </Link>
+        <nav className="md:flex justify-between border-b border-qosgray border-opacity-50 pb-4 items-start font-medium md:font-normal md:mt-5">
+          <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
+            <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
+              {" "}
+              {Infos.Links.products.name}{" "}
+            </span>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/online-payment">
+                {" "}
+                {Infos.Links.products.items[0].title}
+              </Link>
+            </li>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/offline-payment">
+                {" "}
+                {Infos.Links.products.items[1].title}
+              </Link>
+            </li>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/shareLink-payment">
+                {" "}
+                {Infos.Links.products.items[2].title}
+              </Link>
+            </li>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/digital-finance">
+                {" "}
+                {Infos.Links.products.items[3].title}
+              </Link>
+            </li>
+          </ul>
+          <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
+            <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
+              {Infos.Links.developers}
+            </span>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/docs">Documentation</Link>
+            </li>
+          </ul>
+          <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
+            <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
+              {Infos.Links.company.name}
+            </span>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/company">{Infos.Links.company.items[0]}</Link>
+            </li>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/contact-us">{Infos.Links.company.items[1]}</Link>
+            </li>
+          </ul>
+          <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
+            <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
+              {siteMap.links[0]}
+            </span>
+            <li className="text-opacity-60">
+              <Link to="/"> {siteMap.links[1]}</Link>
+            </li>
+            <li className="text-opacity-60">
+              <Link to="/pricing">{Infos.Links.price}</Link>
+            </li>
+            <li className="text-opacity-60">
+              <Link to="/sitemap"> {siteMap.links[3]}</Link>
+            </li>
+          </ul>
+          <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
+            <span className="font-bold uppercase text-mlg md:text-dlg mb-2">
+            {siteMap.legal[0]}
+            </span>
+            <li className="text-opacity-60">
+              <Link to="/terms-and-conditions">{siteMap.legal[1]}</Link>
+            </li>
+            <li className="text-opacity-60">
+              <Link to="/terms-and-conditions">{siteMap.legal[2]}</Link>
+            </li>
+          </ul>
+        </nav>
+        <nav className="md:mt-5">
+          <Address
+            className="max-w-xs w-64 mx-auto md:mx-0"
+            textColor={`text-qosgray text-opacity-70`}
+          />
+        </nav>
+      </Wrapper>
+      <Wrapper className="bg-qosdark bg-opacity-70 h-16 text-qosgray text-opacity-70 text-msm md:text-dsm text-center py-4">
+        <span> {Trad[Lang]} </span>
+      </Wrapper>
+    </footer>
+  );
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
   :root,
   body {
     font-size: 16px;
@@ -16,6 +16,10 @@
       #dde7f3 54.14%,
       #d4e0ed 100.43%
     );
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
   @font-face {
     font-family: "uicons-regular-rounded";
@@ -1112,7 +1116,36 @@
   .btn-sm {
     @apply text-mmd;
   }
-
+  #Landing,
+  .navBack {
+    background: radial-gradient(
+        circle at -30% 200%,
+        rgba(28, 50, 242, 0.5) 20.73%,
+        rgba(225, 109, 3, 0.2) 39.33%,
+        rgba(60, 74, 200, 0.2) 80.89%,
+        rgba(252, 162, 79, 0.5) 98.82%
+      ),
+      linear-gradient(
+        209.03deg,
+        rgba(79, 83, 252, 0.5) 17.84%,
+        rgba(252, 162, 79, 0.125) 101.69%
+      );
+  }
+  #Landing1 {
+    background: radial-gradient(
+        circle at -30% 200%,
+        rgba(28, 50, 242, 0.5) 20.73%,
+        rgba(225, 109, 3, 0.4) 39.33%,
+        rgba(60, 74, 200, 0.4) 80.89%,
+        rgba(252, 162, 79, 0.5) 98.82%
+      ),
+      linear-gradient(
+        209.03deg,
+        rgba(79, 83, 252, 0.5) 17.84%,
+        rgba(252, 162, 79, 0.125) 101.69%
+      );
+      @apply animate-fancyRadius
+  }
   .btn-active {
     @apply bg-qosorange text-qosgray;
   }
@@ -1123,11 +1156,11 @@
     @apply bg-transparent border-qosdark bg-opacity-20 text-qosblue text-opacity-30;
   }
   p {
-    @apply text-mlg lg:text-dmd text-qosdark text-opacity-70 font-medium;
+    @apply text-mlg lg:text-dmd text-qosdark font-medium text-opacity-60;
   }
   .pricingCard {
-    background: linear-gradient(
-      180deg,
+    background: radial-gradient(
+      circle at 30% 150%,
       #ffffff 50%,
       rgba(252, 232, 250, 0.8) 100%
     );
@@ -1177,23 +1210,19 @@
     @apply h-24 w-full rounded-xl border border-opacity-20 px-4 border-qosdark;
   }
   label {
-    @apply text-mmd font-bold;
+    @apply text-mmd text-qosdark font-bold text-opacity-80;
   }
   h1 {
-    @apply text-mH1 font-bold lg:text-dH1 text-qosdark text-opacity-80;
+    @apply text-mH1 font-bold lg:text-dH1 text-qosdark text-opacity-90;
   }
   h2 {
-    @apply text-mH2 lg:text-dH2 text-qosdark font-bold text-opacity-80;
+    @apply text-mH2 lg:text-dH2 text-qosdark font-bold text-opacity-90;
   }
   h3 {
-    @apply text-mH3 lg:text-dH3 text-qosdark font-bold text-opacity-80;
+    @apply text-mH3 lg:text-dH3 text-qosdark font-bold text-opacity-90;
   }
   h4 {
-    @apply text-mST lg:text-dST font-bold text-qosdark text-opacity-80;
-  }
-
-  #Landing {
-
+    @apply text-mST lg:text-dST font-bold text-qosdark text-opacity-90;
   }
   #webDev {
     clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
@@ -1246,22 +1275,16 @@
     @apply text-qosred text-opacity-90 bg-opacity-20 font-medium font-mono;
     shadow: none;
   }
-}
-
-@keyframes backgroundAnimation {
-  0% {
-    background: rgba(19, 105, 250, 0.4);
+  .intl-tel-input,
+  .intl-tel-input:valid {
+    @apply w-full border-transparent;
   }
-  30% {
-    background: rgba(19, 105, 250, 0.4);
+  #Name {
+    clip-path: url(#myCurveMob);
   }
-  60% {
-    background: rgba(19, 105, 250, 0.4);
-  }
-  90% {
-    background: rgba(19, 105, 250, 0.4);
-  }
-  100% {
-    background: rgba(19, 105, 250, 0.4);
+  @screen lg {
+    #Name {
+      clip-path: url(#myCurve);
+    }
   }
 }
