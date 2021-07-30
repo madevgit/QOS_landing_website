@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   :root,
   body {
     font-size: 16px;
-    font-family: "Poppins";
     font-weigth: 400;
     @apply text-qosdark;
+    font-family: "Kumbh Sans", sans-serif;
     background: linear-gradient(
       299.64deg,
       #c3d1e4 -0.02%,
       #dde7f3 54.14%,
       #d4e0ed 100.43%
     );
-    * {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
   }
   @font-face {
     font-family: "uicons-regular-rounded";
@@ -1116,6 +1116,16 @@
   .btn-sm {
     @apply text-mmd;
   }
+  #box {
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(7%, #6565e7),
+      color-stop(74%, #af67e9)
+    );
+    background: linear-gradient(0deg, #6565e7 7%, #af67e9 74%);
+  }
   #Landing,
   .navBack {
     background: radial-gradient(
@@ -1135,8 +1145,8 @@
     background: radial-gradient(
         circle at -30% 200%,
         rgba(28, 50, 242, 0.5) 20.73%,
-        rgba(225, 109, 3, 0.4) 39.33%,
-        rgba(60, 74, 200, 0.4) 80.89%,
+        rgba(225, 109, 3, 0.1) 39.33%,
+        rgba(60, 74, 200, 0.1) 80.89%,
         rgba(252, 162, 79, 0.5) 98.82%
       ),
       linear-gradient(
@@ -1144,7 +1154,7 @@
         rgba(79, 83, 252, 0.5) 17.84%,
         rgba(252, 162, 79, 0.125) 101.69%
       );
-      @apply animate-fancyRadius
+    @apply animate-fancyRadius;
   }
   .btn-active {
     @apply bg-qosorange text-qosgray;
@@ -1244,7 +1254,7 @@
     @apply bg-gradient-to-bl from-qosgreen to-qosgreen text-qosgreen h-2 text-opacity-0;
   }
   .docslinks ~ li {
-    @apply block p-2 bg-qosred;
+    @apply block p-2;
   }
   .docslinks {
     @apply mx-4 block max-w-max;
@@ -1277,7 +1287,15 @@
   }
   .intl-tel-input,
   .intl-tel-input:valid {
-    @apply w-full border-transparent;
+    @apply w-full border-transparent mt-2;
+  }
+  #docsNavs{
+    height:"87vh"
+  }
+  @screen md{
+    #docsNavs{
+      @apply h-screen
+    }
   }
   #Name {
     clip-path: url(#myCurveMob);
@@ -1287,4 +1305,5 @@
       clip-path: url(#myCurve);
     }
   }
+  
 }

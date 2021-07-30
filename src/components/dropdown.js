@@ -23,7 +23,7 @@ export default function Dropdown({ children }) {
     <div className="relative inline-block text-left">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="p-1 border-b border-qosgray  min-w-max"
+        className="p-1 pb-0.5 border-b border-qosgray  min-w-max"
       >
         <img
           src={Languages[Lang].flag}
@@ -55,7 +55,7 @@ export default function Dropdown({ children }) {
         </button>
         <button
           onClick={() => setLang("fr")}
-          className="min-w-max bg-qosgray bg-opacity-10 rounded-lg p-2"
+          className="min-w-max flex bg-qosgray bg-opacity-10 rounded-lg p-2"
         >
           <img
             src={Languages["fr"].flag}

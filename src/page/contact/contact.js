@@ -24,7 +24,7 @@ export default function ContactPage() {
         <h2 className="font-medium text-center text-qosgray md:mt-16 md:w-10/12 mx-auto">
           {Infos.msg.Title}
         </h2>
-        <p class="mt-4 md:w-7/12 mx-auto text-center text-qosgray text-mlg md:text-dlg font-medium">
+        <p className="mt-4 md:w-7/12 mx-auto text-center text-qosgray text-mlg md:text-dlg font-medium">
           {Infos.msg.description}
         </p>
         <section className="my-10 md:flex">
@@ -36,37 +36,37 @@ export default function ContactPage() {
             <Address className="mx-auto h-40" />
           </div>
           <form className="mx-auto max-w-sm md:max-w-3xl md:-ml-0 -mt-2 bg-qosgray shadow-lg md:pl-8 rounded-lg md:flex flex-wrap px-2 py-4 z-0 relative">
-            <div class="mx-auto w-full md:w-1/2  px-2">
-              <label class="block"> {Infos.input.firstname.label} </label>
+            <div className="mx-auto w-full md:w-1/2  px-2">
+              <label className="block"> {Infos.input.firstname.label} </label>
               <input
-                class=""
+                className=""
                 name="firstname"
                 required
                 autofocus
                 placeholder="your firstname"
               />
             </div>
-            <div class="mt-6 mx-auto w-full md:w-1/2 md:mt-0 px-2">
-              <label class="block">{Infos.input.lastname.label}</label>
+            <div className="mt-6 mx-auto w-full md:w-1/2 md:mt-0 px-2">
+              <label className="block">{Infos.input.lastname.label}</label>
               <input
-                class=" "
+                className=" "
                 name="lastname"
                 required
                 placeholder={Infos.input.lastname.placeholder}
               />
             </div>
-            <div class="mx-auto w-full md:w-1/2 md:mt-4 px-2">
-              <label class="block">{Infos.input.email.label}</label>
+            <div className="mt-6 mx-auto w-full md:w-1/2 md:mt-4 px-2">
+              <label className="block">{Infos.input.email.label}</label>
               <input
-                class=""
+                className=""
                 name="firstname"
                 required
                 autofocus
                 placeholder={Infos.input.email.placeholder}
               />
             </div>
-            <div class="mt-6 mx-auto w-full md:w-1/2 md:mt-4 px-2">
-              <label class="block">{Infos.input.tel.label}</label>
+            <div className="mt-6 mx-auto w-full md:w-1/2 md:mt-4 px-2">
+              <label className="block">{Infos.input.tel.label}</label>
               <IntlTelInput
                 onlyCountries={["bj", "tg"]}
                 telInputProps={{ required: true }}
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   name="object"
                   required
                 />
-                <label htmlFor="commercial" class="text-msm font-normal ">
+                <label htmlFor="commercial" className="text-msm font-normal ">
                   {Infos.input.Reasons[1]}
                 </label>
               </div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
                   name="object"
                   required
                 />
-                <label htmlFor="TechSupport" class="text-msm font-normal ">
+                <label htmlFor="TechSupport" className="text-msm font-normal ">
                   {Infos.input.Reasons[0]}
                 </label>
               </div>
