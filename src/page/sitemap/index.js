@@ -65,6 +65,9 @@ export default function Sitemap() {
           <li className="text-opacity-60 mb-1">
             <Link to="/contact-us">{Infos.Links.company.items[1]}</Link>
           </li>
+          <li className="text-opacity-60 mb-1">
+            <Link to="/blog">{"Blog"}</Link>
+          </li>
         </ul>  
         <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">
             <span className="font-bold uppercase text-mlg md:text-dlg mb-2">

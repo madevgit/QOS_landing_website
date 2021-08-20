@@ -1292,6 +1292,24 @@
   #docsNavs{
     height:"87vh"
   }
+    #Editor ul {
+    @apply list-disc;
+  }
+  #Editor ol {
+    @apply list-decimal;
+  }
+   #Editor img {
+    @apply w-full h-auto block;
+  }
+  #Editor img.profil{
+    @apply w-10 h-10 rounded-full block mr-4
+  }
+  #Editor img.poster{
+    @apply h-full w-full block
+  }
+  #Editor table td {
+    @apply bg-transparent;
+  }
   @screen md{
     #docsNavs{
       @apply h-screen
@@ -1305,5 +1323,5 @@
       clip-path: url(#myCurve);
     }
   }
-  
+
 }

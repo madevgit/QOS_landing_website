@@ -10,7 +10,7 @@ export default function LoginPage() {
     const btnMsg= buttonText[Lang]
     return (
         <Wrapper style={{ background: "url('./pictures/authpageBackground.png')", backgroundSize: "80% 1%" }}>
-            <div className="w-12/12 max-w-lg px-2 pricingCard py-8 mx-auto my-32 rounded-xl">
+            <div className="w-12/12 max-w-lg px-4 pricingCard py-8 mx-auto my-32 rounded-xl">
                {Lang==="en"?<h3 className="text-center"> {Infos.msg.Title0} <span className="text-qosorange text-opacity-95">{Infos.msg.Title1} </span> {Infos.msg.Title2}</h3>:<h3 className="text-center">{Infos.msg.Title0} {Infos.msg.Title1} <span className="text-qosorange text-opacity-95">{Infos.msg.Title2} </span></h3>}
                 <form className="">
                     <div className="mx-auto w-full md:max-w-sm mt-10">

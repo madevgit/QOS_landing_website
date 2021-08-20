@@ -19,7 +19,8 @@ export default function Footer() {
     en: "© Copyright 2021 | Theme by QoS Integrated Center | All Rights Reserved",
   };
   useEffect(() => {
-    if (/\/docs/.test(pathname)) {
+    if (/\/docs/.test(pathname) || /\/blog/.test(pathname)) {
+      window.scrollTo(0, 0);
       setHide(true);
     } else {
       setHide(false);
@@ -36,7 +37,7 @@ export default function Footer() {
         childrenClassName="grid grid-flow-row content-center gap-y-6"
         className="py-6 border-b-2 border-qosgray border-opacity-50 text-qosgray relative z-30 text-opacity-70 mx-auto"
       >
-        <div className='flex justify-between'>
+        <div className="flex justify-between">
           <Link to="/">
             <div className="h-8 w-16 md:w-32 md:h-16 lg:w-32 lg:h-16 md:self-center">
               <img
@@ -96,6 +97,9 @@ export default function Footer() {
             </li>
             <li className="text-opacity-60 mb-1">
               <Link to="/contact-us">{Infos.Links.company.items[1]}</Link>
+            </li>
+            <li className="text-opacity-60 mb-1">
+              <Link to="/blog">{"Blog"}</Link>
             </li>
           </ul>
           <ul className="grid grid-flow-row gap-y-2 mb-6 md:mb-0">

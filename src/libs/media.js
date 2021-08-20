@@ -81,6 +81,20 @@ import landingDashi from "../images/illustrations/illustration3.png";
 import USSDflowi from "../images/illustrations/illustration8.png";
 import ussdBigCapture from "../images/illustrations/illustration1.png";
 
+/** Plugins Tutorials */
+/* wordpress */
+import wp1 from "../images/Tutorials/plugins/wordpress/image1.png";
+import wp2 from "../images/Tutorials/plugins/wordpress/image2.png";
+import wp3 from "../images/Tutorials/plugins/wordpress/image3.png";
+import wp4 from "../images/Tutorials/plugins/wordpress/image4.png";
+import wp5 from "../images/Tutorials/plugins/wordpress/image5.png";
+import wp6 from "../images/Tutorials/plugins/wordpress/image6.png";
+import wp7 from "../images/Tutorials/plugins/wordpress/image7.png";
+import wp8 from "../images/Tutorials/plugins/wordpress/image8.png";
+import wp9 from "../images/Tutorials/plugins/wordpress/image9.png";
+import wp10 from "../images/Tutorials/plugins/wordpress/image10.png";
+import wp11 from "../images/Tutorials/plugins/wordpress/image1.png";
+
 export const media = {
   Illustrations: {
     LandingPage: {
@@ -171,5 +185,8 @@ export const media = {
     Togo: Togo,
     en: en,
     fr: fr,
+  },
+  tutorials: {
+    wp: [wp1, wp2, wp3, wp4, wp5, wp6, wp7, wp8, wp9, wp10, wp11],
   },
 };

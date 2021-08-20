@@ -40,6 +40,7 @@ export function MobileNavbar() {
                     <LinkGroup>
                         <LinkIcon name={Infos.Links.company.items[0]} icon={offline} link="/company" />
                         <LinkIcon name={Infos.Links.company.items[1]} icon={offline} link="/contact-us" />
+                        <LinkIcon name={"Blog"} icon={offline} link="/blog" />
                     </LinkGroup>
                 </div>
                 <div className="mb-8">

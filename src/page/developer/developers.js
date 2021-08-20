@@ -344,7 +344,8 @@ export function ApiDocs({ Open, setOpen }) {
   });
   return (
     <section className="md:flex w-ful">
-      <nav id="docsNavs"
+      <nav
+        id="docsNavs"
         className={`w-50 grid items-center justify-center md:justify-start md:w-72 md:rounded-none transform transition-all md:transform-none duration-500 md:duration-75 fixed md:top-0 md:left-0 px-6 bg-qosgray rounded-md -mt-6 md:-mt-0 right-0 z-20 ${
           Open ? "translate-x-0" : "translate-x-full md:translate-x-0"
         }`}
@@ -416,7 +417,9 @@ export function ApiDocs({ Open, setOpen }) {
           </li>
           <li>
             <div className="flex h-8 py-2">
-              <h4 className="md:text-dlg self-center">Plugins and Libraries </h4>
+              <h4 className="md:text-dlg self-center">
+                Plugins and Libraries{" "}
+              </h4>
               <span className="fi fi-rr-angle-small-right"></span>
             </div>
             <p className="flex flex-col">
@@ -820,7 +823,7 @@ export function ApiDocs({ Open, setOpen }) {
           </div>
         </Route>
         <Route exact path={`${path}/plugins`}>
-          <section className="md:w-3/12">
+          <section className="">
             <h2 className="font-medium opacity-80 mt-5">Plugins</h2>
             <a
               className="flex bg-qosgray w-64 md:w-65 rounded-lg shadow-md mt-4 p-2 h-16 justify-between items-center"
@@ -840,6 +843,17 @@ export function ApiDocs({ Open, setOpen }) {
                 </span>
               </div>
             </a>
+            <h3 className="my-8">Integration procedure</h3>
+            <ol className="list-decimal font-normal">
+              <li>
+                {" "}
+                <h4 className="font-normal text-mH3">
+                  Navigate to the <strong> plug-in</strong> section on your
+                  dashbaord
+                </h4>{" "}
+                
+              </li>
+            </ol>
           </section>
         </Route>
         <Route exact path={`${path}/libraries`}>
@@ -854,7 +868,8 @@ export function ApiDocs({ Open, setOpen }) {
               ]}
               activeStyle="btn-primary scale-120 shadow-md rounded-md bg-opacity-80"
               mainStyle={`p-2 flex ${
-                stickyDocsHeader && "fixed md:static md:bg-opacity-0 bg-qosgray z-50 top-16"
+                stickyDocsHeader &&
+                "fixed md:static md:bg-opacity-0 bg-qosgray z-50 top-16"
               } w-full left-0 justify-around mb-5 text-mmd md:text-dmd mb-8`}
             />
           </section>

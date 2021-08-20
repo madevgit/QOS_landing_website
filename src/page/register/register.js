@@ -83,7 +83,7 @@ export default function RegisterPage() {
         backgroundSize: "100% 1%",
       }}
     >
-      <div className="block w-12/12 max-w-lg px-2 pricingCard py-4 mx-auto my-24 rounded-xl">
+      <div className="block w-12/12 max-w-lg px-4 pricingCard py-4 mx-auto my-24 rounded-xl">
         {Lang === "en" ? (
           <h3 className="text-center">
             {" "}

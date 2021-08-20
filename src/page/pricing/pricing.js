@@ -19,7 +19,7 @@ export default function PricingPage() {
       className="mt-24"
       style={{
         background: "url('./pictures/authpageBackground.png')",
-        backgroundSize: "100% 0.4%",
+        backgroundSize: "100% 0.2%",
       }}
     >
       <h2 className="text-qosdark text-opacity-80 mt-4"> {Infos.Title} </h2>
